@@ -1,0 +1,18 @@
+.Header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #333333;
+
+  height: 50px;
+  margin: auto;
+  position: relative;
+  z-index: 100;
+}
+
+.Header a {
+  flex-basis: 250px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
