@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from './Header.css'
+import classes from './RoomsHeader.css'
 import WAVE from '../../../assets/img/wave-yellow.png'
 
 const header = () => {

@@ -5,7 +5,7 @@ const header = () => {
   console.log(classes)
   return (
     <div className={classes.Header}>
-      <a href="/">Войти/Регистрация</a>
+      <a href="/">Войти / Регистрация</a>
     </div>
   )
 }

@@ -1,11 +1,13 @@
 import React from 'react'
 import classes from './Rooms.css'
-import Header from './Header/Header'
+import RoomsHeader from './RoomsHeader/RoomsHeader'
+import RoomsContent from './RoomsContent/RoomsContent'
 
 const rooms = () => {
   return (
     <div className={classes.Rooms}>
-      <Header />
+      <RoomsHeader />
+      <RoomsContent />
     </div>
   )
 }
