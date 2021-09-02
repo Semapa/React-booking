@@ -1,0 +1,10 @@
+.Icon {
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid #dcdcdc;
+  text-transform: uppercase;
+  color: #999999;
+  font-size: 9px;
+  line-height: 1.2;
+  padding: 7px 2px;
+}

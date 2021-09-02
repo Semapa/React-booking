@@ -1,14 +1,13 @@
 const options = {
-  lux: { id: 1, name: 'Собственный люкс' },
-  seaView: { id: 2, name: 'Вид на море' },
-  ac: { id: 3, name: 'Кондиционер' },
-  spa: { id: 4, name: 'Гидромассажная ванна' },
-  bath: { id: 5, name: 'Ванная комната в номере' },
-  tv: { id: 6, name: 'Телевизор с плоским экраном' },
-  coffee: { id: 7, name: 'Кофемашина' },
-  wifi: { id: 8, name: 'Бесплатный Wi-Fi' },
-  bar: { id: 9, name: 'Мини-бар' },
-  parking: { id: 10, name: 'Бесплатная парковка' }
+  lux: { id: 1, name: 'Собственный люкс', icon: ['fas', ' fa-door-open'] },
+  seaView: { id: 2, name: 'Вид на море', icon: ['fas', ' fa-water'] },
+  ac: { id: 3, name: 'Кондиционер', icon: ['fas', ' fa-fan'] },
+  spa: { id: 4, name: 'Ванна в номере', icon: ['fas', ' fa-bath'] },
+  tv: { id: 5, name: 'Телевизор', icon: ['fas', 'fa-tv'] },
+  coffee: { id: 6, name: 'Кофемашина', icon: ['fas', ' fa-coffee'] },
+  wifi: { id: 7, name: 'Бесплатный Wi-Fi', icon: ['fas', ' fa-wifi'] },
+  bar: { id: 8, name: 'Мини-бар', icon: ['fas', ' fa-wine-bottle'] },
+  parking: { id: 9, name: 'Бесплатная парковка', icon: ['fas', ' fa-wifi'] }
 }
 
 const rooms = [
@@ -31,7 +30,7 @@ const rooms = [
     area: '54 кв.м.',
     beds: '2 односпальных кровати',
     price: 23200,
-    options: [options.ac, options.seaView, options.coffee],
+    options: [options.ac, options.seaView, options.coffee, options.bar],
     rating: 3,
     img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/129424775.jpg?k=09e4211c93c62f0f2e95042c719da63880abbed897dd2cf86ce161674c29e812&o='
   },
@@ -43,7 +42,17 @@ const rooms = [
     area: '54 кв.м.',
     beds: '2 односпальных кровати',
     price: 18200,
-    options: [options.ac, options.seaView, options.wifi],
+    options: [
+      options.lux,
+      options.seaView,
+      options.ac,
+      options.spa,
+      options.tv,
+      options.coffee,
+      options.wifi,
+      options.bar,
+      options.parking
+    ],
     rating: 3,
     img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/31456835.jpg?k=c6046ec481bcee9f7976f77c389342fc2f668e1cef26a14687ba50cb4f53dd49&o='
   }

@@ -2,10 +2,11 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import Rating from './Rating/Rating'
-import classes from './Card.css'
+import Icons from './Icons/Icons'
+import classes from './RoomsCard.css'
 
 const card = (props) => {
-  console.log('props', props.id)
+  console.log('props', props)
   return (
     <>
       <div className={classes.Card}>
@@ -27,6 +28,11 @@ const card = (props) => {
               <FontAwesomeIcon icon={faAngleRight} />
             </span>
           </a>
+        </div>
+        <div className={classes.CardIcons}>
+          {props.options.map((item) => (
+            <Icons key={item.id} {...item} />
+          ))}
         </div>
       </div>
     </>
