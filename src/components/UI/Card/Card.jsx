@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import classes from './Card.css'
 
 const card = (props) => {
@@ -6,8 +8,24 @@ const card = (props) => {
   return (
     <>
       <div className={classes.Card}>
-        <img src={props.img} alt="" />
-        <div className={classes.title}>{props.title}</div>
+        <div className={classes.CardImg}>
+          <img src={props.img} alt="" />
+        </div>
+        <div className={classes.CardContent}>
+          <div className={classes.CardContentTitle}>{props.title}</div>
+          <div className={classes.CardContentText}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae in
+            vero corporis officiis ratione distinctio
+          </div>
+        </div>
+        <div className={classes.CardSelect}>
+          <a href="/">
+            <span>ПОДРОБНЕЕ</span>
+            <span>
+              <FontAwesomeIcon icon={faAngleRight} />
+            </span>
+          </a>
+        </div>
       </div>
     </>
   )

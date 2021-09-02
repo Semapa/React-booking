@@ -20,6 +20,36 @@ const rooms = [
     title: 'Полулюкс Делюкс с видом на море',
     price: 18200,
     img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/31456835.jpg?k=c6046ec481bcee9f7976f77c389342fc2f668e1cef26a14687ba50cb4f53dd49&o='
+  },
+  {
+    id: 4,
+    title: 'Полулюкс Делюкс с видом на море',
+    price: 18200,
+    img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/31456835.jpg?k=c6046ec481bcee9f7976f77c389342fc2f668e1cef26a14687ba50cb4f53dd49&o='
+  },
+  {
+    id: 5,
+    title: 'Полулюкс Делюкс с видом на море',
+    price: 18200,
+    img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/31456835.jpg?k=c6046ec481bcee9f7976f77c389342fc2f668e1cef26a14687ba50cb4f53dd49&o='
+  },
+  {
+    id: 6,
+    title: 'Полулюкс Делюкс с видом на море',
+    price: 18200,
+    img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/31456835.jpg?k=c6046ec481bcee9f7976f77c389342fc2f668e1cef26a14687ba50cb4f53dd49&o='
+  },
+  {
+    id: 7,
+    title: 'Полулюкс Делюкс с видом на море',
+    price: 18200,
+    img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/31456835.jpg?k=c6046ec481bcee9f7976f77c389342fc2f668e1cef26a14687ba50cb4f53dd49&o='
+  },
+  {
+    id: 8,
+    title: 'Полулюкс Делюкс с видом на море',
+    price: 18200,
+    img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/31456835.jpg?k=c6046ec481bcee9f7976f77c389342fc2f668e1cef26a14687ba50cb4f53dd49&o='
   }
 ]
 

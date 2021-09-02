@@ -5,10 +5,10 @@ import RoomsContent from './RoomsContent/RoomsContent'
 
 const rooms = () => {
   return (
-    <div className={classes.Rooms}>
+    <section className={classes.Rooms}>
       <RoomsHeader />
       <RoomsContent />
-    </div>
+    </section>
   )
 }
 
