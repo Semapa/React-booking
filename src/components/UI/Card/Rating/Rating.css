@@ -1,0 +1,15 @@
+.Rating {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+.RatingTitle {
+  font-size: 10px;
+  padding-right: 5px;
+}
+
+.RatingStars {
+  font-size: 11px;
+  color: #f8af00;
+}

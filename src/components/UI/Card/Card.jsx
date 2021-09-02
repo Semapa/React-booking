@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import Rating from './Rating/Rating'
 import classes from './Card.css'
 
 const card = (props) => {
@@ -13,6 +14,7 @@ const card = (props) => {
         </div>
         <div className={classes.CardContent}>
           <div className={classes.CardContentTitle}>{props.title}</div>
+          <Rating />
           <div className={classes.CardContentText}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae in
             vero corporis officiis ratione distinctio
