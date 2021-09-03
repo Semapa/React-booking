@@ -5,11 +5,19 @@ import WAVE from '../../../assets/img/wave-yellow.png'
 
 const Header = (props) => {
   return (
-    <div className={classes.header}>
-      <div className={classes.headerTitle}>{props.headerTitle}</div>
-      <div className={classes.headerContent}>{props.headerContent} </div>
-      <img className={classes.headerImg} src={WAVE} alt="" />
-    </div>
+    <>
+      {Object.keys(props).length && (
+        <div className={classes.header}>
+          {props.headerTitle ? (
+            <div className={classes.headerTitle}>{props.headerTitle}</div>
+          ) : null}
+          {props.headerContent ? (
+            <div className={classes.headerContent}>{props.headerContent} </div>
+          ) : null}
+          <img className={classes.headerImg} src={WAVE} alt="" />
+        </div>
+      )}
+    </>
   )
 }
 

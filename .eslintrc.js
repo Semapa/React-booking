@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     indent: ['error', 2],
     'space-before-function-paren': ['error', 'never'],
-    quotes: ['error', 'single', { allowTemplateLiterals: true }]
+    quotes: ['error', 'single', { allowTemplateLiterals: true }],
+    'multiline-ternary': ['error', 'never']
   }
 }
