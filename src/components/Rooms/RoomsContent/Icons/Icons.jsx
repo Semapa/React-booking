@@ -1,21 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classes from './Icons.css'
 
 const Icons = (props) => {
-  console.log('items', props)
+  console.log('icons', props.icon)
   return (
     <>
-      <div>{/* <FontAwesomeIcon icon={['fab', 'apple']} /> */}</div>
-      {/* <FontAwesomeIcon icon={props.icon} /> */}
-      <div className={classes.icon}>{props.name}</div>
+      <div className={classes.icon}>
+        <FontAwesomeIcon icon={props.icon} />
+      </div>
+      <div className={classes.text}>{props.name}</div>
     </>
   )
 }
 
 Icons.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  icon: PropTypes.array.isRequired
 }
 
 export default Icons

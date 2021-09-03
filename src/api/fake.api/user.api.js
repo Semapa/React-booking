@@ -1,13 +1,13 @@
 const options = {
-  lux: { id: 1, name: 'Собственный люкс', icon: ['fas', ' fa-door-open'] },
-  seaView: { id: 2, name: 'Вид на море', icon: ['fas', ' fa-water'] },
-  ac: { id: 3, name: 'Кондиционер', icon: ['fas', ' fa-fan'] },
-  spa: { id: 4, name: 'Ванна в номере', icon: ['fas', ' fa-bath'] },
-  tv: { id: 5, name: 'Телевизор', icon: ['fas', 'fa-tv'] },
-  coffee: { id: 6, name: 'Кофемашина', icon: ['fas', ' fa-coffee'] },
-  wifi: { id: 7, name: 'Бесплатный Wi-Fi', icon: ['fas', ' fa-wifi'] },
-  bar: { id: 8, name: 'Мини-бар', icon: ['fas', ' fa-wine-bottle'] },
-  parking: { id: 9, name: 'Бесплатная парковка', icon: ['fas', ' fa-wifi'] }
+  lux: { id: 1, name: 'Собственный люкс', icon: ['fas', 'door-open'] },
+  seaView: { id: 2, name: 'Вид на море', icon: ['fas', 'water'] },
+  ac: { id: 3, name: 'Кондиционер', icon: ['fas', 'fan'] },
+  spa: { id: 4, name: 'Ванна в номере', icon: ['fas', 'bath'] },
+  tv: { id: 5, name: 'Телевизор', icon: ['fas', 'tv'] },
+  coffee: { id: 6, name: 'Кофемашина', icon: ['fas', 'coffee'] },
+  wifi: { id: 7, name: 'Бесплатный Wi-Fi', icon: ['fas', 'wifi'] },
+  bar: { id: 8, name: 'Мини-бар', icon: ['fas', 'wine-bottle'] },
+  parking: { id: 9, name: 'Бесплатная парковка', icon: ['fas', 'parking'] }
 }
 
 const rooms = [

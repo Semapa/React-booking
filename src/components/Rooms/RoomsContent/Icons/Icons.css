@@ -1,4 +1,9 @@
 .icon {
+  color: #555555;
+  font-size: 12px;
+}
+
+.text {
   position: relative;
   text-align: center;
   border-bottom: 1px solid #dcdcdc;
