@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './RoomsHeader.css'
 import WAVE from '../../../assets/img/wave-yellow.png'
 
-const header = () => {
+const Header = () => {
   return (
     <div className={classes.header}>
       <div className={classes.headerTitle}>ДОСТУПНЫЕ НОМЕРА</div>
@@ -14,4 +14,4 @@ const header = () => {
   )
 }
 
-export default header
+export default Header

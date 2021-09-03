@@ -3,13 +3,13 @@ import classes from './Rooms.css'
 import RoomsHeader from './RoomsHeader/RoomsHeader'
 import RoomsContent from './RoomsContent/RoomsContent'
 
-const rooms = () => {
+const Rooms = () => {
   return (
-    <section className={classes.Rooms}>
+    <section className={classes.rooms}>
       <RoomsHeader />
       <RoomsContent />
     </section>
   )
 }
 
-export default rooms
+export default Rooms

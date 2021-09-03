@@ -1,4 +1,4 @@
-.Header {
+.header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -9,7 +9,7 @@
   z-index: 100;
 }
 
-.Header a {
+.header a {
   flex-basis: 250px;
   text-align: center;
   color: #fff;
@@ -17,6 +17,6 @@
   transition: all 0.2s ease-in;
 }
 
-.Header a:hover {
+.header a:hover {
   color: #fac53b;
 }
