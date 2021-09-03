@@ -1,20 +1,21 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import classes from './RoomsContent.css'
-import api from '../../../api/index'
+// import api from '../../../api/index'
 import Card from '../../UI/Card/Card'
 import CardImage from '../../UI/Card/CardImage/CardImage'
 import CardContent from '../../UI/Card/CardContent/CardContent'
 import Rating from '../../UI/Rating/Rating'
 import Icons from './Icons/Icons'
 
-const rooms = api.rooms.fetchAll()
+// const rooms = api.rooms.fetchAll()
 
-const RoomsContent = () => {
+const RoomsContent = (props) => {
   return (
     <div className={classes.wrapper}>
-      {rooms.map((room) => (
+      {props.rooms.map((room) => (
         <Card key={room.id}>
           <CardImage urlImg={room.img} />
           <CardContent>
@@ -39,6 +40,10 @@ const RoomsContent = () => {
       ))}
     </div>
   )
+}
+
+RoomsContent.propTypes = {
+  rooms: PropTypes.array.isRequired
 }
 
 export default RoomsContent
