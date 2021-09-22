@@ -1,22 +1,14 @@
 import React from 'react'
-import api from './api/index'
 import Header from './components/Header/Header'
-import Rooms from './components/Rooms/Rooms'
-import './fontawesome'
-
-const rooms = api.rooms.fetchAll()
+// import AllRooms from './containers/AllRooms/AllRooms'
+import CurrentRoom from './containers/CurrentRoom/CurrentRoom'
 
 function App() {
   return (
     <>
       <Header />
-      <Rooms
-        headerTitle={'ДОСТУПНЫЕ НОМЕРА'}
-        headerContent={
-          'Наш отель предлагает комфортабельные номера на любой вкус'
-        }
-        rooms={rooms}
-      />
+      {/* <AllRooms /> */}
+      <CurrentRoom />
     </>
   )
 }

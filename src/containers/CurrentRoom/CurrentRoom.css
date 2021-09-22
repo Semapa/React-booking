@@ -1,0 +1,82 @@
+.container {
+  max-width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.headerImg {
+  flex-basis: 100%;
+  margin-bottom: 40px;
+}
+
+.headerImg img {
+  width: 100%;
+  height: 600px;
+}
+
+.description {
+}
+
+.descriptionHeader {
+  margin-bottom: 30px;
+}
+
+.descriptionHeader h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 300;
+  color: #333333;
+}
+
+.descriptionTitle {
+  position: relative;
+  padding: 10px 0 10px 0;
+  margin-bottom: 40px;
+}
+
+.descriptionTitle p {
+  margin: 0;
+  font-weight: 300;
+  color: #4c4c4c;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  font-weight: 300;
+  font-size: 15px;
+}
+.optionsItem {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 40px 20px 0;
+}
+
+.optionsIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8af00;
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.optionsIcon svg {
+  font-size: 30px;
+  color: #fff;
+}
+
+.optionDescription {
+  display: flex;
+  align-items: center;
+  color: #333333;
+}
+
+.button {
+  margin: 30px 0 30px 0;
+}

@@ -4,7 +4,7 @@
   align-items: center;
   background: #333333;
   height: 50px;
-  margin: auto;
+  margin-bottom: 50px;
   position: relative;
   z-index: 100;
 }
