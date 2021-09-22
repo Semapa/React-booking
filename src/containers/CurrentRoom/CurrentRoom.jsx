@@ -2,6 +2,7 @@ import React from 'react'
 import Rating from '../../components/UI/Rating/Rating'
 import Icons from '../../components/Rooms/RoomsContent/Icons/Icons'
 import Separartor from '../../components/UI/Separator/Separartor'
+import Button from '../../components/UI/Button/Button'
 import '../../fontawesome'
 import classes from './CurrentRoom.css'
 
@@ -12,6 +13,9 @@ const rooms = api.rooms.fetchAll()
 // ----------------------------------
 
 const CurrentRoom = () => {
+  const handleClick = () => {
+    console.log('CurrentRoom - button click')
+  }
   return (
     <section className={classes.container}>
       <div className={classes.headerImg}>
@@ -59,7 +63,6 @@ const CurrentRoom = () => {
       </div>
       <div className={classes.options}>
         {rooms[2].options.map((option) => {
-          console.log(option)
           return (
             <div key={option.id} className={classes.optionsItem}>
               <div className={classes.optionsIcon}>
@@ -72,7 +75,10 @@ const CurrentRoom = () => {
       </div>
       <Separartor />
       <div className={classes.button}>
-        <button>Забронировать</button>
+        {/* <button>Забронировать</button> */}
+        <Button type={'reserve'} onClick={() => handleClick()}>
+          Забронировать
+        </Button>
       </div>
     </section>
   )
