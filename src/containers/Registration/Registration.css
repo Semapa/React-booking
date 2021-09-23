@@ -1,0 +1,28 @@
+.registration {
+  display: flex;
+  justify-content: center;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+}
+
+.formControl {
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+
+.formControl:focus {
+  border-color: #fcb100;
+  background: #fff;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(246 99 1 / 0%);
+}
