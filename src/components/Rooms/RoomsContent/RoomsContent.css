@@ -20,7 +20,7 @@
   display: block;
   text-decoration: underline;
   padding: 15px 60px 15px 50px;
-  background: #f8af00;
+  background: var(--color-yellow-main);
   color: #fff;
   font-size: 16px;
   transition: all 0.3s ease-out;

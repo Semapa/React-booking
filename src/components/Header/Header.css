@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #333333;
+  background: var(--color-dark-main);
   height: 100px;
   margin-bottom: 50px;
   position: relative;
@@ -18,7 +18,7 @@
 }
 
 .header a:hover {
-  color: #fac53b;
+  color: var(--color-yellow-main);
 }
 
 .logo {

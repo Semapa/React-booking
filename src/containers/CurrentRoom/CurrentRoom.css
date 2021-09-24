@@ -26,7 +26,7 @@
   margin: 0;
   font-size: 30px;
   font-weight: 300;
-  color: #333333;
+  color: var(--color-dark-main);
 }
 
 .descriptionTitle {
@@ -59,7 +59,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f8af00;
+  background: var(--color-yellow-main);
   height: 50px;
   width: 50px;
   border-radius: 10px;
@@ -74,7 +74,7 @@
 .optionDescription {
   display: flex;
   align-items: center;
-  color: #333333;
+  color: var(--color-dark-main);
 }
 
 .button {

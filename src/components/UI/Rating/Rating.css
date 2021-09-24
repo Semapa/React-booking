@@ -11,5 +11,5 @@
 
 .RatingStars {
   font-size: 11px;
-  color: #f8af00;
+  color: var(--color-yellow-main);
 }
