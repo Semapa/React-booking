@@ -18,11 +18,7 @@
 .header a {
   color: #fff;
   text-decoration: none;
-  transition: all 0.2s ease-in;
-}
-
-.header a:hover {
-  color: var(--color-yellow-main);
+  transition: all 0.3s ease-in;
 }
 
 .logo {
@@ -36,4 +32,10 @@
   color: #fff;
   font-size: 25px;
   font-weight: 400;
+  transition: all 0.3s ease-in;
+}
+
+.header a:hover,
+.logo:hover > div {
+  color: var(--color-yellow-main);
 }
