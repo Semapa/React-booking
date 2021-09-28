@@ -1,15 +1,15 @@
 import React from 'react'
-import classes from './Registration.css'
+import classes from './Login.css'
 import Button from '../../components/UI/Button/Button'
 
-const Registration = () => {
+const Login = () => {
   const handleClick = () => {
-    console.log('Registration Click')
+    console.log('Login Click')
   }
   return (
-    <section className={classes.registration}>
+    <section className={classes.login}>
       <div className={classes.formGroup}>
-        <h1>Регистрация</h1>
+        <h1>Вход</h1>
         <input
           type="text"
           placeholder="Login"
@@ -22,12 +22,15 @@ const Registration = () => {
         />
         <div className={classes.formButton}>
           <Button type={'registration'} onClick={() => handleClick()}>
-            Регистрация
+            Войти
           </Button>
+          <div className={classes.formButtonLink}>
+            <a href="#"> Зарегистрироваться</a>
+          </div>
         </div>
       </div>
     </section>
   )
 }
 
-export default Registration
+export default Login

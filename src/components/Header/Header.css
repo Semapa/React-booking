@@ -9,9 +9,13 @@
   z-index: 100;
 }
 
-.header a {
+.nav {
   flex-basis: 250px;
   text-align: center;
+  color: #fff;
+}
+
+.header a {
   color: #fff;
   text-decoration: none;
   transition: all 0.2s ease-in;

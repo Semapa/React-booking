@@ -1,17 +1,19 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
-import Registration from './containers/Registration/Registration'
-// import AllRooms from './containers/AllRooms/AllRooms'
-// import CurrentRoom from './containers/CurrentRoom/CurrentRoom'
+import LayoutMain from './layouts/main'
+import LayoutLogin from './layouts/login'
 
 function App() {
   return (
     <>
       <Header />
-      {/* <AllRooms /> */}
-      {/* <CurrentRoom /> */}
-      <Registration />
+      <Switch>
+        <Route path="/login" component={LayoutLogin} />
+        <Route path="/registration" component={LayoutLogin} />
+        <Route path="/" component={LayoutMain} />
+      </Switch>
       <Footer />
     </>
   )
