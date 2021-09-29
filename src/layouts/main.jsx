@@ -3,7 +3,7 @@ import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import AllRooms from '../containers/AllRooms/AllRooms'
 
-const LayoutMain = () => {
+const MainLayout = () => {
   return (
     <>
       <Header />
@@ -13,4 +13,4 @@ const LayoutMain = () => {
   )
 }
 
-export default LayoutMain
+export default MainLayout
