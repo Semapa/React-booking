@@ -13,10 +13,10 @@ import { Link } from 'react-router-dom'
 
 // const rooms = api.rooms.fetchAll()
 
-const RoomsContent = (props) => {
+const RoomsContent = ({ rooms }) => {
   return (
     <div className={classes.wrapper}>
-      {props.rooms.map((room) => (
+      {rooms.map((room) => (
         <Card key={room.id}>
           <CardImage urlImg={room.img} />
           <CardContent>

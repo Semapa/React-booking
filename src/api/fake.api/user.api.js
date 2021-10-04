@@ -22,7 +22,9 @@ const rooms = [
     options: [options.ac, options.seaView, options.spa],
     rating: 3,
     img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/59003063.jpg?k=d38f5850a0c9301c82740784f75d28585539ecd4f813d474f07343dfd9f03ed2&o=',
-    descriptionFull: ''
+    descriptionFull: '',
+    reservation: true,
+    roomNumber: 1
   },
   {
     id: 2,
@@ -35,7 +37,9 @@ const rooms = [
     options: [options.ac, options.seaView, options.coffee, options.bar],
     rating: 2,
     img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/129424775.jpg?k=09e4211c93c62f0f2e95042c719da63880abbed897dd2cf86ce161674c29e812&o=',
-    descriptionFull: ''
+    descriptionFull: '',
+    reservation: false,
+    roomNumber: 2
   },
   {
     id: 3,
@@ -58,7 +62,9 @@ const rooms = [
     ],
     rating: 5,
     img: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/31456835.jpg?k=c6046ec481bcee9f7976f77c389342fc2f668e1cef26a14687ba50cb4f53dd49&o=',
-    descriptionFull: ''
+    descriptionFull: '',
+    reservation: false,
+    roomNumber: 3
   }
 ]
 

@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classes from './CardImage.css'
 
-const CardImage = (props) => {
+const CardImage = ({ urlImg }) => {
   return (
     <div className={classes.img}>
-      <img src={props.urlImg} alt="" />
+      <img src={urlImg} alt="" />
     </div>
   )
 }
