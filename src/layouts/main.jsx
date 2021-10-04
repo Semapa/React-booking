@@ -1,16 +1,20 @@
 import React from 'react'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
-import AllRooms from '../containers/AllRooms/AllRooms'
+import PropTypes from 'prop-types'
 
-const MainLayout = () => {
+const MainLayout = ({ children }) => {
   return (
     <>
       <Header />
-      <AllRooms />
+      {children}
       <Footer />
     </>
   )
+}
+
+MainLayout.propTypes = {
+  children: PropTypes.object
 }
 
 export default MainLayout

@@ -1,17 +1,18 @@
 import React from 'react'
-import Registration from '../containers/Registration/Registration'
-import Login from '../containers/Login/Login'
-import { useLocation } from 'react-router'
 import Header from '../components/Header/Header'
+import PropTypes from 'prop-types'
 
-const LayoutLogin = () => {
-  const { pathname } = useLocation()
+const LayoutLogin = ({ children }) => {
   return (
     <>
       <Header />
-      {pathname === '/login' ? <Login /> : <Registration />}
+      {children}
     </>
   )
+}
+
+LayoutLogin.propTypes = {
+  children: PropTypes.object
 }
 
 export default LayoutLogin

@@ -11,6 +11,8 @@ import LoginLayout from './layouts/login'
 import NotFound from './containers/NotFound/NotFound'
 import Login from './containers/Login/Login'
 import Registration from './containers/Registration/Registration'
+import AllRooms from './containers/AllRooms/AllRooms'
+import Admin from './containers/Admin/Admin'
 import PropTypes from 'prop-types'
 
 const pages = [
@@ -35,8 +37,14 @@ const pages = [
   {
     exact: false,
     path: '/rooms/:roomId?',
-    component: Registration,
+    component: AllRooms,
     layout: MainLayout
+  },
+  {
+    exact: false,
+    path: '/admin',
+    component: Admin,
+    layout: LoginLayout
   },
   {
     exact: false,
