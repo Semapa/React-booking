@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './Login.css'
 import Button from '../../components/UI/Button/Button'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   const handleClick = () => {
@@ -25,7 +26,7 @@ const Login = () => {
             Войти
           </Button>
           <div className={classes.formButtonLink}>
-            <a href="#"> Зарегистрироваться</a>
+            <Link to="/registration">Зарегистрироваться</Link>
           </div>
         </div>
       </div>

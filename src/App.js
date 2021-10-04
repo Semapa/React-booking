@@ -17,8 +17,8 @@ const pages = [
   // {
   //   exact: true,
   //   path: '/',
-  //   component: Home,
-  //   layout: LayoutMain
+  //   component: NotFound,
+  //   layout: LoginLayout
   // },
   {
     exact: false,
@@ -64,7 +64,7 @@ function App() {
             )}
           />
         ))}
-        <Redirect from="/" exact to="/rooms" />
+        <Redirect exact from="/" to="/rooms" />
         <Redirect to="/404" />
       </Switch>
     </Router>

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Rating from '../../components/UI/Rating/Rating'
 import Icons from '../../components/Rooms/RoomsContent/Icons/Icons'
 import Separartor from '../../components/UI/Separator/Separartor'
@@ -7,25 +8,27 @@ import '../../fontawesome'
 import classes from './CurrentRoom.css'
 
 // --------- для отладки ------------
-import api from '../../api/index'
+// import api from '../../api/index'
 
-const rooms = api.rooms.fetchAll()
+// const rooms = api.rooms.fetchAll()
 // ----------------------------------
 
-const CurrentRoom = () => {
+const CurrentRoom = ({ rooms, id }) => {
+  const currentRoom = rooms.find((room) => String(room.id) === id)
+
   const handleClick = () => {
     console.log('CurrentRoom - button click')
   }
   return (
     <section className={classes.container}>
       <div className={classes.headerImg}>
-        <img src={rooms[2].img} alt="" />
+        <img src={currentRoom.img} alt="" />
       </div>
 
       <div className={classes.description}>
         <div className={classes.descriptionHeader}>
-          <h2>{rooms[0].title}</h2>
-          <Rating title={'РЕЙТИНГ'} numStars={rooms[0].rating} />
+          <h2>{currentRoom.title}</h2>
+          <Rating title={'РЕЙТИНГ'} numStars={currentRoom.rating} />
         </div>
         <Separartor />
         <div className={classes.descriptionTitle}>
@@ -62,7 +65,7 @@ const CurrentRoom = () => {
         <Separartor />
       </div>
       <div className={classes.options}>
-        {rooms[2].options.map((option) => {
+        {currentRoom.options.map((option) => {
           return (
             <div key={option.id} className={classes.optionsItem}>
               <div className={classes.optionsIcon}>
@@ -82,6 +85,11 @@ const CurrentRoom = () => {
       </div>
     </section>
   )
+}
+
+CurrentRoom.propTypes = {
+  rooms: PropTypes.array,
+  id: PropTypes.string
 }
 
 export default CurrentRoom

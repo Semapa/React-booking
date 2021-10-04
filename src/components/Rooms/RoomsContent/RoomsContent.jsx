@@ -9,6 +9,7 @@ import CardImage from '../../UI/Card/CardImage/CardImage'
 import CardContent from '../../UI/Card/CardContent/CardContent'
 import Rating from '../../UI/Rating/Rating'
 import Icons from './Icons/Icons'
+import { Link } from 'react-router-dom'
 
 // const rooms = api.rooms.fetchAll()
 
@@ -29,12 +30,12 @@ const RoomsContent = (props) => {
             </div>
           </CardContent>
           <div className={classes.select}>
-            <a href="/">
+            <Link to={`/rooms/${room.id}`}>
               <span>ПОДРОБНЕЕ</span>
               <span>
                 <FontAwesomeIcon icon={faAngleRight} />
               </span>
-            </a>
+            </Link>
           </div>
         </Card>
       ))}
