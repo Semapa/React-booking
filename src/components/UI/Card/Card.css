@@ -7,6 +7,10 @@
   transition: all 0.3s;
 }
 
-.card:hover {
+.cardHover:hover {
   box-shadow: 1px 12px 33px 0 rgb(0 0 0 / 35%);
 }
+
+/* .card:hover {
+  box-shadow: 1px 12px 33px 0 rgb(0 0 0 / 35%);
+} */

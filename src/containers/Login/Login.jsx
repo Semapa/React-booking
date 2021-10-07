@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './Login.css'
 import Button from '../../components/UI/Button/Button'
 import { Link } from 'react-router-dom'
+// import TextField from '../../components/UI/TextField/TextField'
 
 const Login = () => {
   const handleClick = () => {
@@ -9,8 +10,9 @@ const Login = () => {
   }
   return (
     <section className={classes.login}>
-      <div className={classes.formGroup}>
+      <form className={classes.formGroup}>
         <h1>Вход</h1>
+        {/* <TextField placeholder="Login" /> */}
         <input
           type="text"
           placeholder="Login"
@@ -29,7 +31,7 @@ const Login = () => {
             <Link to="/registration">Зарегистрироваться</Link>
           </div>
         </div>
-      </div>
+      </form>
     </section>
   )
 }

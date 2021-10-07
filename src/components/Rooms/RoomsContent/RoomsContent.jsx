@@ -17,8 +17,8 @@ const RoomsContent = ({ rooms }) => {
   return (
     <div className={classes.wrapper}>
       {rooms.map((room) => (
-        <Card key={room.id}>
-          <CardImage urlImg={room.img} />
+        <Card key={room.id} options="cardHover">
+          <CardImage urlImg={room.img} alt="room foto" />
           <CardContent>
             <div className={classes.title}>{room.title}</div>
             <Rating title={'РЕЙТИНГ'} numStars={room.rating} />

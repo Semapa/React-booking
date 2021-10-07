@@ -12,7 +12,7 @@ const RoomsStatus = ({ rooms }) => {
       <div className={classes.wrapper}>
         {rooms.map((room) => (
           <Card key={room.id}>
-            <CardImage urlImg={room.img} position={'top'} />
+            <CardImage urlImg={room.img} alt="room foto" />
             <CardContent>
               <p>{room.title}</p>
               <p>Номер комнаты: &nbsp; {room.roomNumber}</p>
