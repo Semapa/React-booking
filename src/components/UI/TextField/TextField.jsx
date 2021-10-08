@@ -17,16 +17,19 @@ const TextField = ({
 
   const getInputClasses = () => {
     // return 'form-control' + (error ? ' is-invalid' : '')
-    return classes.textField
+    return classes.text
   }
 
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState)
   }
+
   return (
-    <div className="">
-      <label htmlFor={name}>{label}</label>
-      <div className="">
+    <div className={classes.wrapper}>
+      <label htmlFor={name} className={classes.label}>
+        {label}
+      </label>
+      <div className={classes.field}>
         <input
           type={showPassword ? 'text' : type}
           id={name}
@@ -41,8 +44,8 @@ const TextField = ({
             {/* <i className={'bi bi-eye' + (showPassword ? '-slash' : '')}></i> */}
           </button>
         )}
-        {error && <div className="">{error}</div>}
       </div>
+      {error && <div className={classes.error}>{error}</div>}
     </div>
   )
 }

@@ -6,6 +6,10 @@
   cursor: pointer;
 }
 
+.button:disabled {
+  opacity: 0.5;
+}
+
 .reserve {
   padding: 10px 25px;
   background-color: #0073b7;
@@ -14,6 +18,7 @@
   font-size: 18px;
 }
 
+.login,
 .registration {
   padding: 10px 25px;
   background-color: #0073b7;
