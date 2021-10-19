@@ -4,6 +4,7 @@ import classes from './button.css'
 
 const Button = ({ children, typeButton, disabled, onClick }) => {
   const classButton = [classes.button, classes[typeButton]]
+  console.log('typeButton', typeButton)
   return (
     <button
       onClick={onClick}

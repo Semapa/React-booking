@@ -12,6 +12,8 @@ import {
   faParking
 } from '@fortawesome/free-solid-svg-icons'
 
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+
 library.add(
   faDoorOpen,
   faWater,
@@ -21,12 +23,15 @@ library.add(
   faCoffee,
   faWifi,
   faWineBottle,
-  faParking
+  faParking,
+  faEye,
+  faEyeSlash
 )
 
 // Можно все сразу импортировать
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fas } from '@fortawesome/free-solid-svg-icons'
+// import { far } from '@fortawesome/free-regular-svg-icons'
+// library.add(fas, far)
 
-// library.add(fas)
 // console.log('library', library)

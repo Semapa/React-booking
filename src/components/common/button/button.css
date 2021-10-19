@@ -31,3 +31,8 @@
 .registration:hover {
   background-color: var(--color-yellow-main);
 }
+
+.password {
+  background-color: #0073b7;
+  color: #fff;
+}

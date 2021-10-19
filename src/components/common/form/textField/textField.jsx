@@ -1,6 +1,8 @@
 import { React, useState } from 'react'
 import PropTypes from 'prop-types'
 import classes from './textField.css'
+import Button from '../../../../components/common/button/button'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const TextField = ({
   label,
@@ -40,9 +42,16 @@ const TextField = ({
           placeholder={placeholder}
         />
         {type === 'password' && (
-          <button className="" type="button" onClick={toggleShowPassword}>
-            {/* <i className={'bi bi-eye' + (showPassword ? '-slash' : '')}></i> */}
-          </button>
+          <Button
+            typeButton={'password'}
+            type="button"
+            onClick={toggleShowPassword}>
+            {showPassword ? (
+              <FontAwesomeIcon icon={['far', 'eye-slash']} />
+            ) : (
+              <FontAwesomeIcon icon={['far', 'eye']} />
+            )}
+          </Button>
         )}
       </div>
       {error && <div className={classes.error}>{error}</div>}
