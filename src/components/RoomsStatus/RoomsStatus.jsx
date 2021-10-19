@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Card from '../UI/Card/Card'
-import CardImage from '../UI/Card/CardImage/CardImage'
-import CardContent from '../UI/Card/CardContent/CardContent'
-import classes from './RoomsStatus.css'
+import Card from '../ui/card/card'
+import CardImage from '../ui/card/cardImage/cardImage'
+import CardContent from '../ui/card/cardContent/cardContent'
+import classes from './roomsStatus.css'
 
 const RoomsStatus = ({ rooms }) => {
   return (

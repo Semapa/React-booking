@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router'
 import api from '../../api/index'
-import Rooms from '../../components/Rooms/Rooms'
-import CurrentRoom from '../../containers/CurrentRoom/CurrentRoom'
+import Rooms from '../../components/rooms/rooms'
+import CurrentRoom from '../currentRoom/currentRoom'
 import '../../fontawesome'
 
 const rooms = api.rooms.fetchAll()

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classes from './Rooms.css'
-import RoomsHeader from './RoomsHeader/RoomsHeader'
-import RoomsContent from './RoomsContent/RoomsContent'
+import classes from './rooms.css'
+import RoomsHeader from './roomsHeader/roomsHeader'
+import RoomsContent from './roomsContent/roomsContent'
 
 const Rooms = ({ rooms, ...rest }) => {
   return (

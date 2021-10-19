@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from './Separartor.css'
+import classes from './separartor.css'
 
 const Separartor = () => {
   return <div className={classes.separartor}></div>

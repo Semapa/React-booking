@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classes from './Button.css'
+import classes from './button.css'
 
 const Button = ({ children, typeButton, disabled, onClick }) => {
   const classButton = [classes.button, classes[typeButton]]
@@ -8,8 +8,7 @@ const Button = ({ children, typeButton, disabled, onClick }) => {
     <button
       onClick={onClick}
       className={classButton.join(' ')}
-      disabled={disabled}
-    >
+      disabled={disabled}>
       {children}
     </button>
   )

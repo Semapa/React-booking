@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import PropTypes from 'prop-types'
-import classes from './TextField.css'
+import classes from './textField.css'
 
 const TextField = ({
   label,

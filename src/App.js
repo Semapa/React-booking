@@ -8,11 +8,11 @@ import {
 } from 'react-router-dom'
 import MainLayout from './layouts/main'
 import LoginLayout from './layouts/login'
-import NotFound from './containers/NotFound/NotFound'
-import Login from './containers/Login/Login'
-import Registration from './containers/Registration/Registration'
-import AllRooms from './containers/AllRooms/AllRooms'
-import Dashboard from './containers/Dashboard/Dashboard'
+import NotFound from './pages/notFound/notFound'
+import Login from './pages/login/login'
+import Registration from './pages/registration/registration'
+import AllRooms from './pages/allRooms/allRooms'
+import Dashboard from './pages/dashboard/dashboard'
 import PropTypes from 'prop-types'
 
 const pages = [

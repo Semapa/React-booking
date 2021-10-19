@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classes from './Card.css'
+import classes from './card.css'
 
 const Card = ({ children, options }) => {
   const cardClasses = [classes.card, classes[options]]

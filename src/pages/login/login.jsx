@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from 'react'
-import classes from './Login.css'
-import Button from '../../components/UI/Button/Button'
+import classes from './login.css'
+import Button from '../../components/common/button/button'
 import { Link } from 'react-router-dom'
-import TextField from '../../components/UI/TextField/TextField'
+import TextField from '../../components/common/form/textField/textField'
 import { validator } from '../../utils/validator'
 
 const Login = () => {

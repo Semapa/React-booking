@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Rating from '../../components/UI/Rating/Rating'
-import Icons from '../../components/Rooms/RoomsContent/Icons/Icons'
-import Separartor from '../../components/UI/Separator/Separartor'
-import Button from '../../components/UI/Button/Button'
+import Rating from '../../components/ui/rating/rating'
+import Icons from '../../components/rooms/roomsContent/icons/icons'
+import Separartor from '../../components/ui/separator/separartor'
+import Button from '../../components/common/button/button'
 import '../../fontawesome'
-import classes from './CurrentRoom.css'
+import classes from './currentRoom.css'
 
 // --------- для отладки ------------
 // import api from '../../api/index'
@@ -79,7 +79,7 @@ const CurrentRoom = ({ rooms, id }) => {
       <Separartor />
       <div className={classes.button}>
         {/* <button>Забронировать</button> */}
-        <Button type={'reserve'} onClick={() => handleClick()}>
+        <Button typeButton={'reserve'} onClick={() => handleClick()}>
           Забронировать
         </Button>
       </div>

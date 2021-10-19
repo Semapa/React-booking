@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import classes from './Icons.css'
+import classes from './icons.css'
 
 const Icons = (props) => {
   return (

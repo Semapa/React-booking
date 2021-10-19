@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classes from './RoomsHeader.css'
+import classes from './roomsHeader.css'
 import WAVE from '../../../assets/img/wave-yellow.png'
 
 const Header = (props) => {

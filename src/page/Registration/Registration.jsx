@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Registration.css'
-import Button from '../../components/UI/Button/Button'
+import Button from '../../components/common/button/button'
 
 const Registration = () => {
   const handleClick = () => {

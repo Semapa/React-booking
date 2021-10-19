@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classes from './CardContent.css'
+import classes from './cardContent.css'
 
 const CardContent = ({ children }) => {
   return <div className={classes.content}> {children}</div>
