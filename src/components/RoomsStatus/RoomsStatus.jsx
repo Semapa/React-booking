@@ -4,6 +4,7 @@ import Card from '../ui/card/card'
 import CardImage from '../ui/card/cardImage/cardImage'
 import CardContent from '../ui/card/cardContent/cardContent'
 import classes from './roomsStatus.css'
+import Status from './status'
 
 const RoomsStatus = ({ rooms }) => {
   return (
@@ -14,9 +15,9 @@ const RoomsStatus = ({ rooms }) => {
           <Card key={room.id}>
             <CardImage urlImg={room.img} alt="room foto" />
             <CardContent>
-              <p>{room.title}</p>
+              <p className={classes.title}>{room.title}</p>
               <p>Номер комнаты: &nbsp; {room.roomNumber}</p>
-              <p>Статус: &nbsp; {room.reservation ? `Свободен` : `Занят`}</p>
+              <Status reservation={room.reservation} />
             </CardContent>
           </Card>
         ))}
