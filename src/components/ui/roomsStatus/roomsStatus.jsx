@@ -8,20 +8,17 @@ import Status from './status'
 
 const RoomsStatus = ({ rooms }) => {
   return (
-    <div className={classes.container}>
-      <div className={classes.sidebar}></div>
-      <div className={classes.wrapper}>
-        {rooms.map((room) => (
-          <Card key={room.id}>
-            <CardImage urlImg={room.img} alt="room foto" />
-            <CardContent>
-              <p className={classes.title}>{room.title}</p>
-              <p>Номер комнаты: &nbsp; {room.roomNumber}</p>
-              <Status reservation={room.reservation} />
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+    <div className={classes.wrapper}>
+      {rooms.map((room) => (
+        <Card key={room.id}>
+          <CardImage urlImg={room.img} alt="room foto" />
+          <CardContent>
+            <p className={classes.title}>{room.title}</p>
+            <p>Номер комнаты: &nbsp; {room.roomNumber}</p>
+            <Status reservation={room.reservation} />
+          </CardContent>
+        </Card>
+      ))}
     </div>
   )
 }

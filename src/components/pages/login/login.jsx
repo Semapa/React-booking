@@ -78,7 +78,7 @@ const Login = () => {
         />
 
         <div className={classes.button}>
-          <Button typeButton={'login'} type="submit" disabled={!isValid}>
+          <Button typeButton={'primary'} type="submit" disabled={!isValid}>
             Войти
           </Button>
           <div className={classes.link}>

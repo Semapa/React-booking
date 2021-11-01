@@ -1,0 +1,5 @@
+.sidebar {
+  margin-top: 1px;
+  width: 250px;
+  background-color: var(--color-dark-main);
+}

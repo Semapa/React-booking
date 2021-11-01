@@ -12,7 +12,11 @@ import {
   faParking
 } from '@fortawesome/free-solid-svg-icons'
 
-import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import {
+  faEye,
+  faEyeSlash,
+  faTimesCircle
+} from '@fortawesome/free-regular-svg-icons'
 
 library.add(
   faDoorOpen,
@@ -25,7 +29,8 @@ library.add(
   faWineBottle,
   faParking,
   faEye,
-  faEyeSlash
+  faEyeSlash,
+  faTimesCircle
 )
 
 // Можно все сразу импортировать

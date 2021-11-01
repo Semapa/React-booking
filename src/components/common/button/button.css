@@ -12,27 +12,24 @@
 
 .reserve {
   padding: 10px 25px;
-  background-color: #0073b7;
+  background-color: var(--color-button-blue);
   color: #fff;
   text-transform: uppercase;
   font-size: 18px;
 }
 
-.login,
-.registration {
+.primary {
   padding: 10px 25px;
-  background-color: #0073b7;
+  background-color: var(--color-button-blue);
   color: #fff;
-  /* text-transform: uppercase; */
   font-size: 16px;
 }
 
-.reserve:hover,
-.registration:hover {
+.primary:hover {
   background-color: var(--color-yellow-main);
 }
 
 .password {
-  background-color: #0073b7;
+  background-color: var(--color-button-blue);
   color: #fff;
 }

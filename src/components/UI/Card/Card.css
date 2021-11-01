@@ -11,6 +11,18 @@
   box-shadow: 1px 12px 33px 0 rgb(0 0 0 / 35%);
 }
 
+.closeButton {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: var(--color-dark-main);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.closeButton:hover {
+  color: red;
+}
+
 /* .card:hover {
   box-shadow: 1px 12px 33px 0 rgb(0 0 0 / 35%);
 } */

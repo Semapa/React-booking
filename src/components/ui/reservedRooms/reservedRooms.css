@@ -1,0 +1,16 @@
+p {
+  font-weight: 300;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}

@@ -1,16 +1,6 @@
 p {
   font-weight: 300;
 }
-.container {
-  display: flex;
-  height: calc(100vh - 100px);
-}
-
-.sidebar {
-  margin-top: 1px;
-  width: 250px;
-  background-color: var(--color-dark-main);
-}
 
 .wrapper {
   display: flex;

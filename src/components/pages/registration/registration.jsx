@@ -21,7 +21,7 @@ const Registration = () => {
           className={classes.formControl}
         />
         <div className={classes.formButton}>
-          <Button typeButton={'registration'} onClick={() => handleClick()}>
+          <Button typeButton={'primary'} onClick={() => handleClick()}>
             Регистрация
           </Button>
         </div>
