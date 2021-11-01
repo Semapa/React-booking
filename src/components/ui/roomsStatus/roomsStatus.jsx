@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Card from '../ui/card/card'
-import CardImage from '../ui/card/cardImage/cardImage'
-import CardContent from '../ui/card/cardContent/cardContent'
+import Card from '../card/card'
+import CardImage from '../card/cardImage/cardImage'
+import CardContent from '../card/cardContent/cardContent'
 import classes from './roomsStatus.css'
 import Status from './status'
 

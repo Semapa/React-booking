@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../components/header/header'
-import Footer from '../components/footer/footer'
+import Header from '../components/ui/header/header'
+import Footer from '../components/ui/footer/footer'
 import PropTypes from 'prop-types'
 
 const MainLayout = ({ children }) => {
