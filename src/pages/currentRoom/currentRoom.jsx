@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Rating from '../../ui/rating/rating'
-import Icons from '../../ui/rooms/roomsContent/icons/icons'
-import Separartor from '../../ui/separator/separartor'
-import Button from '../../common/button/button'
-import '../../../fontawesome'
+import Rating from '../../components/ui/rating/rating'
+import Icons from '../../components/ui/rooms/roomsContent/icons/icons'
+import Separartor from '../../components/ui/separator/separartor'
+import Button from '../../components/common/button/button'
+import '../../fontawesome'
 import classes from './currentRoom.css'
 
 // --------- для отладки ------------

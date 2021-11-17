@@ -1,9 +1,9 @@
 import { React, useState, useEffect } from 'react'
 import classes from './login.css'
-import Button from '../../common/button/button'
+import Button from '../../components/common/button/button'
 import { Link } from 'react-router-dom'
-import TextField from '../../common/form/textField/textField'
-import { validator } from '../../../utils/validator'
+import TextField from '../../components/common/form/textField/textField'
+import { validator } from '../../utils/validator'
 
 const Login = () => {
   const [data, setData] = useState({ email: '', password: '' })

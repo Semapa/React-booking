@@ -1,9 +1,9 @@
 import React from 'react'
-import RoomsStatus from '../../ui/roomsStatus/roomsStatus'
-import api from '../../../api/index'
-import Sidebar from '../../ui/sidebar/sidebar'
+import RoomsStatus from '../../components/ui/roomsStatus/roomsStatus'
+import api from '../../api/index'
+import Sidebar from '../../components/ui/sidebar/sidebar'
 import classes from './dashboard.css'
-import ReservedRooms from '../../ui/reservedRooms/reservedRooms'
+import ReservedRooms from '../../components/ui/reservedRooms/reservedRooms'
 // для отладки
 const rooms = api.rooms.fetchAll()
 const isAdmin = false
