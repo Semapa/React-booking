@@ -1,9 +1,12 @@
 import React from 'react'
-import RoomsStatus from '../../components/ui/roomsStatus/roomsStatus'
+import { Switch, Route } from 'react-router-dom'
 import api from '../../api/index'
-import Sidebar from '../../components/ui/sidebar/sidebar'
 import classes from './dashboard.css'
+import Sidebar from '../../components/ui/sidebar/sidebar'
+import RoomsStatus from '../../components/ui/roomsStatus/roomsStatus'
 import ReservedRooms from '../../components/ui/reservedRooms/reservedRooms'
+import RoomsManager from '../../components/ui/roomsManager/roomsManager'
+
 // для отладки
 const rooms = api.rooms.fetchAll()
 const isAdmin = true
@@ -11,14 +14,29 @@ const isAdmin = true
 const Dashboard = () => {
   return (
     <div className={classes.container}>
-      {isAdmin ? (
-        <>
-          <Sidebar />
-          <RoomsStatus rooms={rooms} />
-        </>
-      ) : (
-        <ReservedRooms rooms={rooms} />
-      )}
+      <Switch>
+        {isAdmin ? (
+          <>
+            <Sidebar />
+            <Route
+              exact
+              path="/dashboard/"
+              render={() => <RoomsStatus rooms={rooms} />}
+            />
+            <Route
+              exact
+              path="/dashboard/manager"
+              render={() => <RoomsManager rooms={rooms} />}
+            />
+          </>
+        ) : (
+          <Route
+            exact
+            path="/dashboard/"
+            render={() => <ReservedRooms rooms={rooms} />}
+          />
+        )}
+      </Switch>
     </div>
   )
 }

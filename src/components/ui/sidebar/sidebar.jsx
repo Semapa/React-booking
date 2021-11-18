@@ -6,8 +6,8 @@ const Sidebar = () => {
   return (
     <div className={classes.sidebar}>
       <div className={classes.wrapper}>
-        <Link to="/dashboard/room-status">Статус номеров</Link>
-        <Link to="/dashboard/room-manager">Менеджер номеров</Link>
+        <Link to="/dashboard/">Статус номеров</Link>
+        <Link to="/dashboard/manager">Менеджер номеров</Link>
       </div>
     </div>
   )
