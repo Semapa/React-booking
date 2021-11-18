@@ -6,7 +6,7 @@ import classes from './dashboard.css'
 import ReservedRooms from '../../components/ui/reservedRooms/reservedRooms'
 // для отладки
 const rooms = api.rooms.fetchAll()
-const isAdmin = false
+const isAdmin = true
 
 const Dashboard = () => {
   return (

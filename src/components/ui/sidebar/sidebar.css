@@ -1,5 +1,24 @@
 .sidebar {
   margin-top: 1px;
-  width: 250px;
+  width: 200px;
   background-color: var(--color-dark-main);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 10px 0 10px;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 100;
+  /* text-transform: uppercase; */
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: var(--color-yellow-main);
 }

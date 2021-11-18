@@ -6,53 +6,8 @@ import {
   BrowserRouter as Router,
   useHistory
 } from 'react-router-dom'
-import MainLayout from './layouts/main'
-import LoginLayout from './layouts/login'
-import NotFound from './pages/notFound/notFound'
-import Login from './pages/login/login'
-import Registration from './pages/registration/registration'
-import AllRooms from './pages/allRooms/allRooms'
-import Dashboard from './pages/dashboard/dashboard'
 import PropTypes from 'prop-types'
-
-const pages = [
-  // {
-  //   exact: true,
-  //   path: '/',
-  //   component: AllRooms,
-  //   layout: MainLayout
-  // },
-  {
-    exact: false,
-    path: '/login',
-    component: Login,
-    layout: LoginLayout
-  },
-  {
-    exact: false,
-    path: '/registration',
-    component: Registration,
-    layout: LoginLayout
-  },
-  {
-    exact: false,
-    path: '/rooms/:roomId?',
-    component: AllRooms,
-    layout: MainLayout
-  },
-  {
-    exact: false,
-    path: '/dashboard',
-    component: Dashboard,
-    layout: LoginLayout
-  },
-  {
-    exact: false,
-    path: '/404',
-    component: NotFound,
-    layout: MainLayout
-  }
-]
+import routes from './routes'
 
 function App() {
   const history = useHistory()
@@ -60,15 +15,15 @@ function App() {
   return (
     <Router history={history}>
       <Switch>
-        {pages.map((page, index) => (
+        {routes.map((rout, index) => (
           <Route
             key={index}
-            exact={page.exact}
-            path={page.path}
+            exact={rout.exact}
+            path={rout.path}
             render={(props) => (
-              <page.layout history={props.history}>
-                <page.component {...props} />
-              </page.layout>
+              <rout.layout history={props.history}>
+                <rout.component {...props} />
+              </rout.layout>
             )}
           />
         ))}

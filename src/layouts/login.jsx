@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../components/ui/header/header'
 import PropTypes from 'prop-types'
 
-const LayoutLogin = ({ children }) => {
+const LoginLayout = ({ children }) => {
   return (
     <>
       <Header />
@@ -11,8 +11,8 @@ const LayoutLogin = ({ children }) => {
   )
 }
 
-LayoutLogin.propTypes = {
+LoginLayout.propTypes = {
   children: PropTypes.object
 }
 
-export default LayoutLogin
+export default LoginLayout
