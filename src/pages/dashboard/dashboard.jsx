@@ -6,16 +6,16 @@ import Sidebar from '../../components/ui/sidebar/sidebar'
 import RoomsStatus from '../../components/ui/roomsStatus/roomsStatus'
 import ReservedRooms from '../../components/ui/reservedRooms/reservedRooms'
 import RoomsManager from '../../components/ui/roomsManager/roomsManager'
+import config from '../../config.json'
 
 // для отладки
 const rooms = api.rooms.fetchAll()
-const isAdmin = true
 
 const Dashboard = () => {
   return (
     <div className={classes.container}>
       <Switch>
-        {isAdmin ? (
+        {config.isAdmin ? (
           <>
             <Sidebar />
             <Route
