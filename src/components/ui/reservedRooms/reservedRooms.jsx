@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useHistory } from 'react-router'
-import Card from '../card/card'
-import CardImage from '../card/cardImage/cardImage'
-import CardContent from '../card/cardContent/cardContent'
+import Card, { CardImage, CardContent } from '../card'
 import classes from './reservedRooms.css'
 import Button from '../../common/button/button'
 

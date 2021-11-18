@@ -1,7 +1,7 @@
 import { React, useState } from 'react'
 import PropTypes from 'prop-types'
 import classes from './textField.css'
-import Button from '../../../../components/common/button/button'
+import Button from '../button/button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const TextField = ({

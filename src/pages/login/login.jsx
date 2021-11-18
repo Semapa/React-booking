@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './login.css'
 import Button from '../../components/common/button/button'
 import { Link } from 'react-router-dom'
-import TextField from '../../components/common/form/textField/textField'
+import TextField from '../../components/common/form/textField'
 
 import useForm from '../../hooks/useForm'
 

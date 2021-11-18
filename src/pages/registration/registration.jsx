@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './registration.css'
 import { Link } from 'react-router-dom'
 import Button from '../../components/common/button/button'
-import TextField from '../../components/common/form/textField/textField'
+import TextField from '../../components/common/form/textField'
 
 import useForm from '../../hooks/useForm'
 

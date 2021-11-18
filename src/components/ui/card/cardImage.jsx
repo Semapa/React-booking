@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classes from './cardImage.css'
+import classes from './card.css'
 
 const CardImage = ({ urlImg, alt = '' }) => {
   console.log(alt)

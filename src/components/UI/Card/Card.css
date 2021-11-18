@@ -26,3 +26,16 @@
 /* .card:hover {
   box-shadow: 1px 12px 33px 0 rgb(0 0 0 / 35%);
 } */
+
+.content {
+  margin: 25px;
+}
+
+.img {
+  overflow: hidden;
+}
+
+.img img {
+  height: 200px;
+  width: 100%;
+}
