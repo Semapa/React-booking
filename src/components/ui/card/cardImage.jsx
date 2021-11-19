@@ -2,10 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classes from './card.css'
 
-const CardImage = ({ urlImg, alt = '' }) => {
-  console.log(alt)
+const CardImage = ({ urlImg, alt = '', options = [] }) => {
+  const cardClasses = [].concat(
+    classes.img,
+    options.map((opt) => classes[opt])
+  )
   return (
-    <div className={classes.img}>
+    <div className={cardClasses.join(' ')}>
       <img src={urlImg} alt={alt} />
     </div>
   )
@@ -13,7 +16,8 @@ const CardImage = ({ urlImg, alt = '' }) => {
 
 CardImage.propTypes = {
   urlImg: PropTypes.string.isRequired,
-  alt: PropTypes.string
+  alt: PropTypes.string,
+  options: PropTypes.array
 }
 
 export default CardImage

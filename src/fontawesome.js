@@ -15,7 +15,9 @@ import {
 import {
   faEye,
   faEyeSlash,
-  faTimesCircle
+  faTimesCircle,
+  faEdit,
+  faTrashAlt
 } from '@fortawesome/free-regular-svg-icons'
 
 library.add(
@@ -30,7 +32,9 @@ library.add(
   faParking,
   faEye,
   faEyeSlash,
-  faTimesCircle
+  faTimesCircle,
+  faEdit,
+  faTrashAlt
 )
 
 // Можно все сразу импортировать

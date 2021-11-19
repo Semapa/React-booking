@@ -33,3 +33,25 @@
   background-color: var(--color-button-blue);
   color: #fff;
 }
+
+.edit {
+  padding: 10px 20px;
+  margin-right: 25px;
+  /* color: #fff; */
+  background-color: var(--color-yellow-main);
+  opacity: 0.8;
+}
+.edit:hover {
+  opacity: 1;
+}
+
+.delete {
+  padding: 10px 20px;
+  margin-right: 25px;
+  /* color: #fff; */
+  background-color: var(--color-button-delete);
+  opacity: 0.8;
+}
+.delete:hover {
+  opacity: 1;
+}

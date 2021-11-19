@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.controls {
+  display: flex;
+  justify-content: end;
+}
+
+.search {
+  flex-basis: 10%;
+}
+.rooms {
+  flex-basis: 80%;
+}

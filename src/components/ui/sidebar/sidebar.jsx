@@ -7,7 +7,7 @@ const Sidebar = () => {
     <div className={classes.sidebar}>
       <div className={classes.wrapper}>
         <Link to="/dashboard/">Статус номеров</Link>
-        <Link to="/dashboard/manager">Менеджер номеров</Link>
+        <Link to="/dashboard/manager">Управление номерами</Link>
       </div>
     </div>
   )

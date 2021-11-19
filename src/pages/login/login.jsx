@@ -1,8 +1,8 @@
 import React from 'react'
 import classes from './login.css'
-import Button from '../../components/common/button/button'
 import { Link } from 'react-router-dom'
-import TextField from '../../components/common/form/textField'
+import { Button } from '../../components/common/button'
+import { TextField } from '../../components/common/form'
 
 import useForm from '../../hooks/useForm'
 
@@ -32,9 +32,11 @@ const validatorConfig = {
   }
 }
 
+const formConfig = { email: '', password: '' }
+
 const Login = () => {
   const { form, handleSubmit, handleChange, errors, isValid } = useForm(
-    { email: '', password: '' },
+    formConfig,
     validatorConfig
   )
 

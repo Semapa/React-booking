@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Card, { CardImage, CardContent } from '../card'
 import classes from './roomsStatus.css'
+import Card, { CardImage, CardContent } from '../card'
 import Status from './status'
 
 const RoomsStatus = ({ rooms }) => {
