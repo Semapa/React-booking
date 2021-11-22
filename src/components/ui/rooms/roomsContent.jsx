@@ -15,7 +15,7 @@ const RoomsContent = ({ rooms }) => {
   return (
     <div className={classes.wrapper}>
       {rooms.map((room) => (
-        <Card key={room.id} options={['hover']}>
+        <Card key={room.id} options={['vertical', 'hover']}>
           <CardImage urlImg={room.img} alt="room foto" />
           <CardContent>
             <div className={classes.title}>{room.title}</div>

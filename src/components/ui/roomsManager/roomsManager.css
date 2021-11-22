@@ -10,9 +10,22 @@
   justify-content: end;
 }
 
-.search {
-  flex-basis: 10%;
+.filter {
+  flex-basis: 20%;
 }
+
+.search {
+  margin: 0 40px 0 20px;
+  /* width: 60%; */
+}
+
 .rooms {
-  flex-basis: 80%;
+  flex-basis: 60%;
+}
+
+.create {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-basis: 40%;
 }

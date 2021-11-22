@@ -12,7 +12,7 @@ const Card = ({ children, options = [], closeButton }) => {
     <div className={cardClasses.join(' ')}>
       {closeButton && (
         <div className={classes.closeButton}>
-          <FontAwesomeIcon icon={['far', 'times-circle']} />
+          <FontAwesomeIcon icon={['fa', 'times']} />
         </div>
       )}
       {children}
