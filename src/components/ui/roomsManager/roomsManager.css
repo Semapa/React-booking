@@ -24,8 +24,6 @@
 }
 
 .create {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  flex-basis: 40%;
+  padding-top: 5px;
+  margin: 0 auto;
 }

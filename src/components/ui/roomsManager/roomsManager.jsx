@@ -42,6 +42,9 @@ const RoomsManager = ({ rooms }) => {
           </Card>
         ))}
       </div>
+      <div className={classes.create}>
+        <Button typeButton={'primary'}>Добавить номер</Button>
+      </div>
     </div>
   )
 }

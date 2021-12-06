@@ -2,6 +2,7 @@
   margin-top: 1px;
   width: 200px;
   /* height: 100vh; */
+  height: calc(100vh - 100px);
   background-color: var(--color-dark-main);
 }
 

@@ -6,6 +6,7 @@ import Sidebar from '../../components/ui/sidebar/sidebar'
 import RoomsStatus from '../../components/ui/roomsStatus/roomsStatus'
 import ReservedRooms from '../../components/ui/reservedRooms/reservedRooms'
 import RoomsManager from '../../components/ui/roomsManager/roomsManager'
+import AddRoom from '../../components/ui/addRoom'
 import config from '../../config.json'
 
 // для отладки
@@ -27,6 +28,11 @@ const Dashboard = () => {
               exact
               path="/dashboard/manager"
               render={() => <RoomsManager rooms={rooms} />}
+            />
+            <Route
+              exact
+              path="/dashboard/add-room"
+              render={() => <AddRoom />}
             />
           </>
         ) : (
