@@ -60,7 +60,8 @@ router.post('/signUp', [
         // Ставим на первое место, тк в последствии эти данные могут приходить в req.body
         // ...generateUserData(),
         ...req.body,
-        password: hashedPassword
+        password: hashedPassword,
+        role: 'user'
       })
 
       // Генерируем набор токенов

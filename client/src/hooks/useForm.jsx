@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import roomsService from '../services/rooms.service'
 import { validator } from '../utils/validator'
 
 const useForm = (initialState = {}, validatorConfig, onSubmit) => {
@@ -20,12 +21,24 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
     setForm((prevState) => ({ ...prevState, [target.name]: target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const isValid = validate()
     if (!isValid) return
+
+    // onSubmit?.(form)
     console.log('form', form)
-    onSubmit?.(form)
+    console.log('e', e)
+
+    // if (e.target.dataset === 'add-number') {
+    console.log('111')
+    try {
+      const data = await roomsService.create(form)
+      console.log('data', data)
+    } catch (error) {
+      console.log(error)
+    }
+    // }
   }
 
   return { handleChange, handleSubmit, form, isValid, errors }

@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 import api from '../../api/index'
 import Rooms from '../../components/ui/rooms/rooms'
 import CurrentRoom from '../currentRoom/currentRoom'
 import '../../fontawesome'
+import optionsService from '../../services/options.service'
 
 const rooms = api.rooms.fetchAll()
 
 const AllRooms = () => {
   const { roomId } = useParams()
+
+  useEffect(async () => {
+    const date = await optionsService.get()
+    console.log('optionsService.get()', date)
+  }, [])
+
   return (
     <>
       {roomId ? (

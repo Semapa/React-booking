@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import classes from './addRoom.css'
 import useForm from '../../../hooks/useForm'
 import { TextField, MultiSelectField } from '../../common/form'
 import { Button } from '../../common/button'
+import optionsService from '../../../services/options.service'
 
 const validatorConfig = {
   title: {
@@ -57,9 +58,17 @@ const AddRoom = () => {
     validatorConfig
   )
 
+  useEffect(async () => {
+    const date = await optionsService.get()
+    console.log('optionsService.get()', date)
+  }, [])
+
   return (
     <div className={classes.wrapper}>
-      <form className={classes.form} onSubmit={handleSubmit}>
+      <form
+        className={classes.form}
+        onSubmit={handleSubmit}
+        data-type="add-number">
         <TextField
           label="Название номера"
           name="title"

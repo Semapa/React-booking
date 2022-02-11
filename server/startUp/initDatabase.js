@@ -1,18 +1,11 @@
 const Options = require('../models/Options')
-const RoomsCategory = require('../models/RoomsCategory')
 
 const optionsMock = require('../mock/options')
-const roomsCategoryMock = require('../mock/roomsCategory')
 
 module.exports = async () => {
   const options = await Options.find()
   if (options.length !== optionsMock.length) {
     await createInitialEntity(Options, optionsMock)
-  }
-
-  const roomCategory = await RoomsCategory.find()
-  if ((roomCategory, this.length !== roomsCategoryMock.length)) {
-    await createInitialEntity(RoomsCategory, roomsCategoryMock)
   }
 }
 
