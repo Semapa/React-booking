@@ -60,7 +60,7 @@ const AddRoom = () => {
 
   useEffect(async () => {
     const date = await optionsService.get()
-    console.log('optionsService.get()', date)
+    console.log(' AddRoom optionsService.get()', date)
   }, [])
 
   return (

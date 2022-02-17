@@ -1,10 +1,10 @@
-import httpServise from './http.service'
+import httpService from './http.service'
 
 const roomsEndpoint = 'rooms/'
 
 const roomsService = {
   create: async (payload) => {
-    const { data } = await httpServise.post(roomsEndpoint, payload)
+    const { data } = await httpService.post(roomsEndpoint, payload)
     return data
   }
 }

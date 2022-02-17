@@ -5,9 +5,9 @@ const http = axios.create({
   baseUrl: configFile.apiEndpoint
 })
 
-const httpServise = {
+const httpService = {
   get: http.get,
   post: http.post
 }
 
-export default httpServise
+export default httpService
