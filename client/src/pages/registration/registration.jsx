@@ -42,7 +42,10 @@ const Registration = () => {
 
   return (
     <section className={classes.registration}>
-      <form className={classes.form} onSubmit={handleSubmit}>
+      <form
+        className={classes.form}
+        onSubmit={handleSubmit}
+        data-type="registration">
         <h1>Регистрация</h1>
         <TextField
           placeholder="Email"

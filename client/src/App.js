@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Route,
   Switch,
@@ -8,9 +8,16 @@ import {
 } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import routes from './routes'
+import { useDispatch } from 'react-redux'
+import { loadOptionsList } from './store/options'
 
 function App() {
   const history = useHistory()
+
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(loadOptionsList())
+  }, [])
 
   return (
     <Router history={history}>

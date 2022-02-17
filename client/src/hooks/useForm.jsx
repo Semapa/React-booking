@@ -30,15 +30,24 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
     console.log('form', form)
     console.log('e', e)
 
-    // if (e.target.dataset === 'add-number') {
-    console.log('111')
-    try {
-      const data = await roomsService.create(form)
-      console.log('data', data)
-    } catch (error) {
-      console.log(error)
+    switch (e.target.dataset.type) {
+      case 'add-number':
+        console.log('111')
+        try {
+          const data = await roomsService.create(form)
+          console.log('data', data)
+        } catch (error) {
+          console.log(error)
+        }
+        break
+
+      case 'registration':
+        console.log('registration')
+        break
+
+      default:
+        break
     }
-    // }
   }
 
   return { handleChange, handleSubmit, form, isValid, errors }
