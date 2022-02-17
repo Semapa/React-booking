@@ -2,7 +2,7 @@ import axios from 'axios'
 import configFile from '../config.json'
 
 const http = axios.create({
-  baseUrl: configFile.apiEndpoint
+  baseURL: configFile.apiEndpoint
 })
 
 const httpService = {
