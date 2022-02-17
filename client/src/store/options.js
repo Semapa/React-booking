@@ -30,7 +30,6 @@ export const loadOptionsList = () => async (dispatch) => {
   dispatch(optionsRequested())
   try {
     const data = await optionsService.get()
-    console.log('content', data)
     dispatch(optionsReceved(data))
   } catch (error) {
     dispatch(optionsRequestFailed(error.message))
