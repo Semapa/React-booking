@@ -49,6 +49,7 @@ const { authRequested, authRequestSuccess, authRequestFailed, userLoggedOut } =
 export const login =
   ({ payload, redirect }) =>
   async (dispatch) => {
+    console.log('login payload', payload)
     const { email, password } = payload
     dispatch(authRequested())
     try {

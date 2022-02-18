@@ -3,6 +3,8 @@ import classes from './login.css'
 import { Link } from 'react-router-dom'
 import { Button } from '../../components/common/button'
 import { TextField } from '../../components/common/form'
+import { useSelector } from 'react-redux'
+import { getAuthErrors } from '../../store/users'
 
 import useForm from '../../hooks/useForm'
 
@@ -43,9 +45,11 @@ const Login = () => {
     validatorConfig
   )
 
+  const loginError = useSelector(getAuthErrors())
+
   return (
     <section className={classes.login}>
-      <form className={classes.form} onSubmit={handleSubmit}>
+      <form className={classes.form} onSubmit={handleSubmit} data-type="login">
         <h1>Вход</h1>
         <TextField
           placeholder="Email"
@@ -62,7 +66,7 @@ const Login = () => {
           onChange={handleChange}
           error={errors.password}
         />
-
+        {loginError && <p className={classes.error}>{loginError}</p>}
         <div className={classes.button}>
           <Button typeButton={'primary'} type="submit" disabled={!isValid}>
             Войти

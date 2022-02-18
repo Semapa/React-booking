@@ -2,17 +2,23 @@ import { useState, useEffect } from 'react'
 import roomsService from '../services/rooms.service'
 import { validator } from '../utils/validator'
 import { useDispatch } from 'react-redux'
-import { signUp } from '../store/users'
+import { signUp, login } from '../store/users'
+import { useHistory } from 'react-router-dom'
 
 const useForm = (initialState = {}, validatorConfig, onSubmit) => {
   const [form, setForm] = useState(initialState)
   const [errors, setErrors] = useState({})
 
+  const history = useHistory()
   const dispatch = useDispatch()
 
   useEffect(() => {
     if (form.email !== '') validate()
   }, [form])
+
+  const redirect = history.location.state
+    ? history.location.state.from.pathname
+    : '/'
 
   const validate = () => {
     const errors = validator(form, validatorConfig)
@@ -35,18 +41,19 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
     console.log('e', e)
 
     switch (e.target.dataset.type) {
-      case 'add-number':
-        console.log('111')
+      case 'registration':
+        dispatch(signUp(form))
+        break
+      case 'login':
+        dispatch(login({ payload: form, redirect }))
+        break
+      case 'add-room':
         try {
           const data = await roomsService.create(form)
           console.log('data', data)
         } catch (error) {
           console.log(error)
         }
-        break
-
-      case 'registration':
-        dispatch(signUp(form))
         break
 
       default:

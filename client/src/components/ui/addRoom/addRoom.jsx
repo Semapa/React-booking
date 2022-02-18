@@ -68,7 +68,7 @@ const AddRoom = () => {
       <form
         className={classes.form}
         onSubmit={handleSubmit}
-        data-type="add-number">
+        data-type="add-room">
         <TextField
           label="Название номера"
           name="title"
