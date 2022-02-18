@@ -1,0 +1,11 @@
+[
+  { "_id": "1", "name": "Собственный люкс", "icon": "fas, door-open" },
+  { "_id": "2", "name": "Вид на море", "icon": "fas, water" },
+  { "_id": "3", "name": "Кондиционер", "icon": "fas, fan" },
+  { "_id": "4", "name": "Ванна в номере", "icon": "fas, bath" },
+  { "_id": "5", "name": "Телевизор", "icon": "fas,tv" },
+  { "_id": "6", "name": "Кофемашина", "icon": "fas, coffee" },
+  { "_id": "7", "name": "Бесплатный Wi-Fi", "icon": "fas, wifi" },
+  { "_id": "8", "name": "Мини-бар", "icon": "fas, wine-bottle" },
+  { "_id": "9", "name": "Бесплатная парковка", "icon": "fas, parking" }
+]
