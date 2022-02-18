@@ -2,8 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import classes from './header.css'
 import logoImg from '../../../assets/img/logo.png'
+import { useSelector } from 'react-redux'
+import { getIsLoggedIn } from '../../../store/users'
 
 const Header = () => {
+  const isLoggedIn = useSelector(getIsLoggedIn())
+
   return (
     <div className={classes.header}>
       <Link to="/">
@@ -13,9 +17,16 @@ const Header = () => {
         </div>
       </Link>
       <div className={classes.nav}>
-        <Link to="/login">Войти</Link>
-        <span>&nbsp;/&nbsp;</span>
-        <Link to="/registration">Регистрация</Link>
+        {isLoggedIn ? (
+          <p>Logged</p>
+        ) : (
+          <>
+            {' '}
+            <Link to="/login">Войти</Link>
+            <span>&nbsp;/&nbsp;</span>
+            <Link to="/registration">Регистрация</Link>
+          </>
+        )}
       </div>
     </div>
   )

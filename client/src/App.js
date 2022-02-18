@@ -4,10 +4,13 @@ import PropTypes from 'prop-types'
 import routes from './routes'
 import { useDispatch } from 'react-redux'
 import { loadOptionsList } from './store/options'
+import { loadUsersList } from './store/users'
 
 function App() {
   const dispatch = useDispatch()
+
   useEffect(() => {
+    dispatch(loadUsersList())
     dispatch(loadOptionsList())
   }, [])
 

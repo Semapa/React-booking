@@ -2,7 +2,7 @@ const express = require('express')
 const bcrypt = require('bcryptjs')
 const { check, validationResult } = require('express-validator')
 const User = require('../models/User')
-// const { generateUserData } = require('../utils/helpers')
+const { generateUserData } = require('../utils/helpers')
 const tokenService = require('../services/token.service')
 const Token = require('../models/Token')
 const router = express.Router({ mergeParams: true })
@@ -58,7 +58,7 @@ router.post('/signUp', [
       // Создаем пользователя в БД
       const newUser = await User.create({
         // Ставим на первое место, тк в последствии эти данные могут приходить в req.body
-        // ...generateUserData(),
+        ...generateUserData(),
         ...req.body,
         password: hashedPassword,
         role: 'user'

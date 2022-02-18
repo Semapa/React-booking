@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import authService from '../services/auth.service'
+import userService from '../services/user.service'
 import localStorageService from '../services/localStorage.service'
 import generateAuthError from '../utils/generateAuthError'
 import history from '../utils/history'
@@ -12,17 +13,17 @@ const usersSlice = createSlice({
     error: null
   },
   reducers: {
-    // usersRequested: (state) => {
-    //   state.isLoading = true
-    // },
-    // usersReceved: (state, action) => {
-    //   state.entities = action.payload
-    //   state.isLoading = false
-    // },
-    // usersRequestFailed: (state, action) => {
-    //   state.error = action.payload
-    //   state.isLoading = false
-    // },
+    usersRequested: (state) => {
+      state.isLoading = true
+    },
+    usersReceved: (state, action) => {
+      state.entities = action.payload
+      state.isLoading = false
+    },
+    usersRequestFailed: (state, action) => {
+      state.error = action.payload
+      state.isLoading = false
+    },
     authRequested: (state) => {
       state.error = null
     },
@@ -43,8 +44,15 @@ const usersSlice = createSlice({
 })
 
 const { reducer: usersReducer, actions } = usersSlice
-const { authRequested, authRequestSuccess, authRequestFailed, userLoggedOut } =
-  actions
+const {
+  authRequested,
+  authRequestSuccess,
+  authRequestFailed,
+  userLoggedOut,
+  usersRequested,
+  usersReceved,
+  usersRequestFailed
+} = actions
 
 export const login =
   ({ payload, redirect }) =>
@@ -90,6 +98,22 @@ export const logOut = () => (dispatch) => {
   localStorageService.removeAuthData()
   dispatch(userLoggedOut())
   history.push('/')
+}
+
+export const loadUsersList = () => async (dispatch, getState) => {
+  dispatch(usersRequested())
+  try {
+    const { content } = await userService.get()
+    dispatch(usersReceved(content))
+  } catch (error) {
+    dispatch(usersRequestFailed(error.message))
+  }
+}
+
+export const getCurrentUserData = () => (state) => {
+  return state.users.entities
+    ? state.users.entities.find((u) => u._id === state.users.auth.userId)
+    : null
 }
 
 export const getIsLoggedIn = () => (state) => state.users.isLogggedIn

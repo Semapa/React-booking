@@ -5,7 +5,8 @@ const schema = new Schema(
     // Описываем поля, которые присутствуют в модели
     name: { type: String },
     email: { type: String, required: true, unique: true },
-    password: { type: String }
+    password: { type: String },
+    image: String
   },
   {
     timestamps: true
