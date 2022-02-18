@@ -44,3 +44,10 @@
 .link a:hover {
   color: var(--color-yellow-main);
 }
+
+.error {
+  font-size: 14px;
+  font-weight: 300;
+  color: red;
+  margin-top: 0;
+}

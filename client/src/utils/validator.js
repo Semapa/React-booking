@@ -22,6 +22,11 @@ export function validator(data, config) {
         statusValidate = !digitRegExp.test(data)
         break
       }
+      case 'isContainЫpecialСharacter': {
+        const digitRegExp = /(?=.*[!@#$%^&*])/
+        statusValidate = !digitRegExp.test(data)
+        break
+      }
       case 'min': {
         statusValidate = data.length < config.value
         break

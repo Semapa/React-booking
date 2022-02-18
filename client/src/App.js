@@ -1,26 +1,18 @@
 import React, { useEffect } from 'react'
-import {
-  Route,
-  Switch,
-  Redirect,
-  BrowserRouter as Router,
-  useHistory
-} from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router'
 import PropTypes from 'prop-types'
 import routes from './routes'
 import { useDispatch } from 'react-redux'
 import { loadOptionsList } from './store/options'
 
 function App() {
-  const history = useHistory()
-
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(loadOptionsList())
   }, [])
 
   return (
-    <Router history={history}>
+    <div>
       <Switch>
         {routes.map((rout, index) => (
           <Route
@@ -37,7 +29,7 @@ function App() {
         <Redirect exact from="/" to="/rooms" />
         <Redirect to="/404" />
       </Switch>
-    </Router>
+    </div>
   )
 }
 

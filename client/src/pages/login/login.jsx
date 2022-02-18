@@ -25,6 +25,9 @@ const validatorConfig = {
     isContainDigit: {
       message: 'Пароль должен содержать хотя бы одну цифру'
     },
+    isContainЫpecialСharacter: {
+      message: 'Пароль должен содержать один из специальных символов !@#$%^&*'
+    },
     min: {
       message: 'Пароль должен состоять минимум из 8 символов',
       value: 8

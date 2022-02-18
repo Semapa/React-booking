@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react'
 import roomsService from '../services/rooms.service'
 import { validator } from '../utils/validator'
+import { useDispatch } from 'react-redux'
+import { signUp } from '../store/users'
 
 const useForm = (initialState = {}, validatorConfig, onSubmit) => {
   const [form, setForm] = useState(initialState)
   const [errors, setErrors] = useState({})
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (form.email !== '') validate()
@@ -42,7 +46,7 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
         break
 
       case 'registration':
-        console.log('registration')
+        dispatch(signUp(form))
         break
 
       default:

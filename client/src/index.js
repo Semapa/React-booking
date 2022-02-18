@@ -5,13 +5,20 @@ import reportWebVitals from './reportWebVitals'
 import App from './App'
 import { createStore } from './store/createStore'
 import { Provider } from 'react-redux'
+import { Router } from 'react-router-dom'
+import history from './utils/history'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const store = createStore()
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router history={history}>
+        <App />
+        <ToastContainer />
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

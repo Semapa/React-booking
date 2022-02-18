@@ -70,7 +70,7 @@ export const login =
 export const signUp = (payload) => async (dispatch) => {
   dispatch(authRequested())
   try {
-    const data = authService.register(payload)
+    const data = await authService.register(payload)
     localStorageService.setTokens(data)
     dispatch(authRequestSuccess({ userId: data.userId }))
     history.push('/')
@@ -90,5 +90,9 @@ export const logOut = () => (dispatch) => {
   dispatch(userLoggedOut())
   history.push('/')
 }
+
+export const getIsLoggedIn = () => (state) => state.users.isLogggedIn
+export const getCurrentUserId = () => (state) => state.users.auth.userId
+export const getAuthErrors = () => (state) => state.users.error
 
 export default usersReducer
