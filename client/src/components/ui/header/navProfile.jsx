@@ -1,5 +1,6 @@
 import React from 'react'
 import { getCurrentUserData } from '../../../store/users'
+import { useSelector } from 'react-redux'
 
 const NavProfile = () => {
   const currentUser = useSelector(getCurrentUserData())

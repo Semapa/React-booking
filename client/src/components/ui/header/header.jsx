@@ -4,6 +4,7 @@ import classes from './header.css'
 import logoImg from '../../../assets/img/logo.png'
 import { useSelector } from 'react-redux'
 import { getIsLoggedIn } from '../../../store/users'
+import NavProfile from './navProfile'
 
 const Header = () => {
   const isLoggedIn = useSelector(getIsLoggedIn())
@@ -18,7 +19,7 @@ const Header = () => {
       </Link>
       <div className={classes.nav}>
         {isLoggedIn ? (
-          <p>Logged</p>
+          <NavProfile />
         ) : (
           <>
             {' '}

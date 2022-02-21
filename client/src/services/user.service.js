@@ -6,7 +6,6 @@ const userEndpoint = 'users/'
 const userService = {
   get: async () => {
     const { data } = await httpService.get(userEndpoint)
-    console.log('data', data)
     return data
   },
   create: async (payload) => {
