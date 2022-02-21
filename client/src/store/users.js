@@ -5,13 +5,27 @@ import localStorageService from '../services/localStorage.service'
 import generateAuthError from '../utils/generateAuthError'
 import history from '../utils/history'
 
+const initialState = localStorageService.getAccessToken()
+  ? {
+      entities: null,
+      isLoading: true,
+      error: null,
+      auth: { userId: localStorageService.getUserId() },
+      isLogggedIn: true,
+      dataLoaded: false
+    }
+  : {
+      entities: null,
+      isLoading: false,
+      error: null,
+      auth: null,
+      isLogggedIn: false,
+      dataLoaded: false
+    }
+
 const usersSlice = createSlice({
   name: 'users',
-  initialState: {
-    entities: null,
-    isLoading: true,
-    error: null
-  },
+  initialState,
   reducers: {
     usersRequested: (state) => {
       state.isLoading = true
@@ -103,20 +117,22 @@ export const logOut = () => (dispatch) => {
 export const loadUsersList = () => async (dispatch, getState) => {
   dispatch(usersRequested())
   try {
-    const { content } = await userService.get()
-    dispatch(usersReceved(content))
+    const data = await userService.get()
+    dispatch(usersReceved(data))
   } catch (error) {
     dispatch(usersRequestFailed(error.message))
   }
 }
 
-export const getCurrentUserData = () => (state) => {
-  return state.users.entities
-    ? state.users.entities.find((u) => u._id === state.users.auth.userId)
-    : null
+export const getUserById = (userId) => (state) => {
+  if (state.users.entities) {
+    return state.users.entities.find((u) => u._id === userId)
+  }
 }
 
 export const getIsLoggedIn = () => (state) => state.users.isLogggedIn
+export const getDataStatus = () => (state) => state.users.dataLoaded
+export const getUsersLoadingStatus = () => (state) => state.users.isLoading
 export const getCurrentUserId = () => (state) => state.users.auth.userId
 export const getAuthErrors = () => (state) => state.users.error
 
