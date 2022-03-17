@@ -10,7 +10,8 @@ import {
   faWifi,
   faWineBottle,
   faParking,
-  faTimes
+  faTimes,
+  faAngleDown
 } from '@fortawesome/free-solid-svg-icons'
 
 import {
@@ -36,7 +37,8 @@ library.add(
   faTimesCircle,
   faEdit,
   faTrashAlt,
-  faTimes
+  faTimes,
+  faAngleDown
 )
 
 // Можно все сразу импортировать

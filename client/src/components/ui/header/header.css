@@ -10,9 +10,32 @@
 }
 
 .nav {
-  flex-basis: 250px;
+  flex-basis: auto;
   text-align: center;
   color: #fff;
+}
+
+.nav .dropdown:hover {
+  cursor: pointer;
+}
+
+.nav .dropdownMenu {
+  display: none;
+  flex-direction: column;
+  align-items: start;
+  position: absolute;
+  background-color: #333333;
+  padding: 0px 0px 10px 20px;
+  width: 90px;
+  margin-left: 40px;
+}
+
+.nav .dropdownMenu a {
+  margin-bottom: 5px;
+}
+
+.nav .showMenu {
+  display: flex;
 }
 
 .header a {
@@ -38,4 +61,28 @@
 .header a:hover,
 .logo:hover > div {
   color: var(--color-yellow-main);
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.profile img {
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.profile div {
+  transition: all 0.3s ease-in;
+}
+
+.profile div:hover {
+  color: var(--color-yellow-main);
+}
+
+.profile span {
+  margin: 10px 20px 10px 20px;
 }
