@@ -6,17 +6,17 @@ import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const NavProfile = () => {
-  const [, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState(false)
   const currentUser = useSelector(getCurrentUserData())
   const toggleMenu = () => {
     setOpen((prevState) => !prevState)
   }
-
-  const dropdownMenu = classes.dropdown
+  const dropdownMenu =
+    classes.dropdownMenu + ' ' + (isOpen ? classes.showMenu : '')
 
   if (!currentUser) return <p>Loading</p>
   return (
-    <div className={dropdownMenu}>
+    <div className={classes.dropdown}>
       <div className={classes.profile}>
         <img src={currentUser.image} alt="" height="40" />
         <div onClick={toggleMenu}>
@@ -24,7 +24,7 @@ const NavProfile = () => {
           <FontAwesomeIcon icon={['fa', 'angle-down']} />
         </div>
       </div>
-      <div className={classes.dropdownMenu}>
+      <div className={dropdownMenu}>
         <Link to={`/`} className="">
           Profile
         </Link>

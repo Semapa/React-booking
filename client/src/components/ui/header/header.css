@@ -13,6 +13,7 @@
   flex-basis: auto;
   text-align: center;
   color: #fff;
+  margin-right: 20px;
 }
 
 .nav .dropdown:hover {

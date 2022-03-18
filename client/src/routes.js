@@ -5,6 +5,7 @@ import Dashboard from './pages/dashboard'
 import NotFound from './pages/notFound'
 import LoginLayout from './layouts/login'
 import MainLayout from './layouts/main'
+import Logout from './layouts/logout'
 
 const routes = [
   // {
@@ -19,6 +20,12 @@ const routes = [
     path: '/login',
     component: Login,
     layout: LoginLayout
+  },
+  {
+    exact: false,
+    path: '/logout',
+    component: Logout,
+    layout: MainLayout
   },
   {
     exact: false,
