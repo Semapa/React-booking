@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  mongodb:
+    container_name: 'mongodb'
+    image: 'mongo'
+    volumes:
+      - mongo-prod:/data/db
+    env_file:
+      - ./config/production.env
+    ports:
+      - '27017:27017'
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.production
+    ports:
+      - '80:80'
+    env_file:
+      - ./config/production.env
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.production
+    ports:
+      - '5000:5000'
+    depends_on:
+      - mongodb
+    env_file:
+      - ./config/production.env
+
+# создание volumes отличный от обычного режима, чтобы не путать базы
+volumes:
+  mongo-prod:

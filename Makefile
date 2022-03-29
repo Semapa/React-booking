@@ -9,7 +9,7 @@ mongo:
 	mongo 
 
 backend:
-	docker run -p 5000:5000 \
+	docker run -p 8080:8080 \
 	-d \
 	--rm \
 	--name booking-backend \
@@ -35,3 +35,9 @@ stop:
 
 dev:
 	docker-compose -f docker-compose.yml up -d
+
+build:
+	docker-compose -f docker-compose.production.yml up -d
+
+down:
+	docker-compose down	

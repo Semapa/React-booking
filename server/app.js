@@ -5,6 +5,7 @@ const chalk = require('chalk')
 const cors = require('cors')
 const initDatabase = require('./startUp/initDatabase')
 const routes = require('./routes')
+const { patch } = require('./routes')
 
 const app = express()
 
@@ -17,11 +18,20 @@ app.use(cors())
 // все роуты на которые будет реагировать приложения будут начинаться /api
 app.use('/api', routes)
 
-// if (process.env.NODE_ENV === 'production') {
-//   console.log('Production')
-// } else {
-//   console.log('Development')
-// }
+if (process.env.NODE_ENV === 'production') {
+  console.log('Production')
+
+  // ТАКОЙ ПОДХОД РАБОТАЕТ КОГДА И КЛИЕНТ И СЕРВЕР НАХОДЯТСЯ В ОДНОМ КОНТЕЙНЕРЕ
+  // используем статическую папку build
+  // app.use('/', express.static(patch.join(__dirname, '..', 'client', 'build')))
+
+  // на каждый запрос, который не относиться к api выдаем статичкский index.html
+  // app.get('*', (req, res) => {
+  //   res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'))
+  // })
+} else {
+  console.log('Development')
+}
 
 async function start() {
   try {
@@ -30,6 +40,14 @@ async function start() {
     mongoose.connection.once('open', () => {
       initDatabase()
     })
+
+    // чтобы использовать development.env
+    // const {
+    //   MONGO_INITDB_ROOT_USERNAME: username,
+    //   MONGO_INITDB_ROOT_PASSWORD: password,
+    //   MONGO_HOST: host
+    // } = process.env
+    // const uri = `mongodb://${username}:${password}@${host}/booking?authSource=admin`
 
     // подключаем БД
     await mongoose.connect(config.get('mongoUri'))
