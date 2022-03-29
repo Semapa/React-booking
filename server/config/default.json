@@ -1,6 +1,6 @@
 {
   "port": 8080,
-  "mongoUri": "mongodb://mongodb:27017/booking",
+  "mongoUri": "mongodb://evgen:mypassword@mongodb:27017/booking?authSource=admin",
   "accessSecret": "super secret from backend",
   "refreshSecret": "super refresh key"
 }
