@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import classes from './header.css'
 import { Link } from 'react-router-dom'
-import { getCurrentUserData } from '../../../store/users'
+import { getCurrentUserData, getIsAdmin } from '../../../store/users'
 import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const NavProfile = () => {
   const [isOpen, setOpen] = useState(false)
   const currentUser = useSelector(getCurrentUserData())
+  const isAdmin = useSelector(getIsAdmin())
+
+  useEffect(() => {
+    console.log('navProfile', isAdmin)
+  }, [])
   const toggleMenu = () => {
     setOpen((prevState) => !prevState)
   }
@@ -28,6 +33,11 @@ const NavProfile = () => {
         <Link to={`/`} className="">
           Profile
         </Link>
+        {isAdmin && (
+          <Link to={`/dashboard`} className="">
+            Dashboard
+          </Link>
+        )}
         <Link to="/logout" className="">
           Log Out
         </Link>

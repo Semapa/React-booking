@@ -12,7 +12,8 @@ const initialState = localStorageService.getAccessToken()
       error: null,
       auth: { userId: localStorageService.getUserId() },
       isLogggedIn: true,
-      dataLoaded: false
+      dataLoaded: false,
+      isAdmin: localStorageService.getIsAdmin()
     }
   : {
       entities: null,
@@ -20,7 +21,8 @@ const initialState = localStorageService.getAccessToken()
       error: null,
       auth: null,
       isLogggedIn: false,
-      dataLoaded: false
+      dataLoaded: false,
+      isAdmin: false
     }
 
 const usersSlice = createSlice({
@@ -44,6 +46,7 @@ const usersSlice = createSlice({
     authRequestSuccess: (state, action) => {
       state.auth = action.payload
       state.isLogggedIn = true
+      state.isAdmin = action.isAdmin
     },
     authRequestFailed: (state, action) => {
       state.error = action.payload
@@ -71,13 +74,17 @@ const {
 export const login =
   ({ payload, redirect }) =>
   async (dispatch) => {
-    console.log('login payload', payload)
+    // console.log('login payload', payload)
     const { email, password } = payload
     dispatch(authRequested())
     try {
       const data = await authService.login({ email, password })
+      // console.log('login', data)
       localStorageService.setTokens(data)
-      dispatch(authRequestSuccess({ userId: data.userId }))
+      localStorageService.setIsAdmin(data)
+      dispatch(
+        authRequestSuccess({ userId: data.userId, isAdmin: data.isAdmin })
+      )
       history.push(redirect)
     } catch (error) {
       const { code, message } = error.response.data.error
@@ -138,6 +145,7 @@ export const getUserById = (userId) => (state) => {
 }
 
 export const getIsLoggedIn = () => (state) => state.users.isLogggedIn
+export const getIsAdmin = () => (state) => state.users.isAdmin
 export const getDataStatus = () => (state) => state.users.dataLoaded
 export const getUsersLoadingStatus = () => (state) => state.users.isLoading
 export const getCurrentUserId = () => (state) => state.users.auth.userId

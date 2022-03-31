@@ -129,7 +129,11 @@ router.post('/signInWithPassword', [
       const tokens = tokenService.generate({ _id: exitingUser._id })
       await tokenService.save(exitingUser._id, tokens.refreshToken)
 
-      res.status(200).send({ ...tokens, userId: exitingUser._id })
+      res.status(200).send({
+        ...tokens,
+        userId: exitingUser._id,
+        isAdmin: exitingUser.isAdmin
+      })
     } catch (error) {
       res.status(500).json({
         message: 'На сервере произошла ошибка. Попробуйте позже...'
