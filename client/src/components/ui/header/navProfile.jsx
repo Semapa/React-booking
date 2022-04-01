@@ -11,7 +11,7 @@ const NavProfile = () => {
   const isAdmin = useSelector(getIsAdmin())
 
   useEffect(() => {
-    console.log('navProfile', isAdmin)
+    console.log('navProfile isAdmin', isAdmin)
   }, [])
   const toggleMenu = () => {
     setOpen((prevState) => !prevState)
