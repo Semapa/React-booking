@@ -65,16 +65,17 @@ const CurrentRoom = ({ rooms, id }) => {
         <Separartor />
       </div>
       <div className={classes.options}>
-        {currentRoom.options.map((option) => {
-          return (
-            <div key={option.id} className={classes.optionsItem}>
-              <div className={classes.optionsIcon}>
-                <Icons icon={option.icon} />
+        {currentRoom &&
+          currentRoom.options.map((option) => {
+            return (
+              <div key={option.id} className={classes.optionsItem}>
+                <div className={classes.optionsIcon}>
+                  <Icons icon={option.icon} />
+                </div>
+                <div className={classes.optionDescription}>{option.name}</div>
               </div>
-              <div className={classes.optionDescription}>{option.name}</div>
-            </div>
-          )
-        })}
+            )
+          })}
       </div>
       <Separartor />
       <div className={classes.button}>

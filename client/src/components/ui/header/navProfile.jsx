@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import classes from './header.css'
 import { Link } from 'react-router-dom'
 import { getCurrentUserData, getIsAdmin } from '../../../store/users'
@@ -10,9 +10,6 @@ const NavProfile = () => {
   const currentUser = useSelector(getCurrentUserData())
   const isAdmin = useSelector(getIsAdmin())
 
-  useEffect(() => {
-    console.log('navProfile isAdmin', isAdmin)
-  }, [])
   const toggleMenu = () => {
     setOpen((prevState) => !prevState)
   }
@@ -33,7 +30,11 @@ const NavProfile = () => {
         <Link to={`/`} className="">
           Profile
         </Link>
-        {isAdmin && (
+        {isAdmin ? (
+          <Link to={`/dashboard/manager`} className="">
+            Dashboard
+          </Link>
+        ) : (
           <Link to={`/dashboard`} className="">
             Dashboard
           </Link>

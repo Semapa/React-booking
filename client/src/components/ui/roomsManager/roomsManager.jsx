@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router'
 import PropTypes from 'prop-types'
 import classes from './roomsManager.css'
 import Card, { CardImage, CardContent } from '../card'
@@ -8,6 +9,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { TextField } from '../../common/form'
 
 const RoomsManager = ({ rooms }) => {
+  const history = useHistory()
+  const handleAdd = () => {
+    history.push('/dashboard/add-room')
+  }
+
   return (
     <div className={classes.wrapper}>
       <div className={classes.filter}>Search</div>
@@ -43,7 +49,9 @@ const RoomsManager = ({ rooms }) => {
         ))}
       </div>
       <div className={classes.create}>
-        <Button typeButton={'primary'}>Добавить номер</Button>
+        <Button typeButton={'primary'} onClick={handleAdd}>
+          Добавить номер
+        </Button>
       </div>
     </div>
   )

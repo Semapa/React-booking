@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import api from '../../api/index'
 import classes from './dashboard.css'
-import Sidebar from '../../components/ui/sidebar/sidebar'
+// import Sidebar from '../../components/ui/sidebar/sidebar'
 import RoomsStatus from '../../components/ui/roomsStatus/roomsStatus'
 import ReservedRooms from '../../components/ui/reservedRooms/reservedRooms'
 import RoomsManager from '../../components/ui/roomsManager/roomsManager'
@@ -18,7 +18,7 @@ const Dashboard = () => {
       <Switch>
         {config.isAdmin ? (
           <>
-            <Sidebar />
+            {/* <Sidebar /> */}
             <Route
               exact
               path="/dashboard/"

@@ -1,11 +1,12 @@
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import optionsReducer from './options'
 import usersReducer from './users'
-
-const { combineReducers, configureStore } = require('@reduxjs/toolkit')
+import roomsReducer from './rooms'
 
 const rootReducer = combineReducers({
   options: optionsReducer,
-  users: usersReducer
+  users: usersReducer,
+  rooms: roomsReducer
 })
 
 export function createStore() {

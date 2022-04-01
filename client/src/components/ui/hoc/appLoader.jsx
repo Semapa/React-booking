@@ -7,6 +7,7 @@ import {
   loadUsersList
 } from '../../../store/users'
 import { loadOptionsList } from '../../../store/options'
+import { loadRoomsList } from '../../../store/rooms'
 
 const AppLoader = ({ children }) => {
   const dispatch = useDispatch()
@@ -15,6 +16,7 @@ const AppLoader = ({ children }) => {
 
   useEffect(() => {
     dispatch(loadOptionsList())
+    dispatch(loadRoomsList())
     if (isLoggedIn) {
       dispatch(loadUsersList())
     }

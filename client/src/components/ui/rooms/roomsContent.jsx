@@ -22,7 +22,7 @@ const RoomsContent = ({ rooms }) => {
             <Rating title={'РЕЙТИНГ'} numStars={room.rating} />
             <div className={classes.text}>{room.description}</div>
             <div className={classes.icons}>
-              {room.options.map((item) => (
+              {room?.options.map((item) => (
                 <Icons key={item.id} {...item} />
               ))}
             </div>
