@@ -14,6 +14,7 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
 
   useEffect(() => {
     if (form.email !== '') validate()
+    // console.log('useForm useEffect', form)
   }, [form])
 
   const redirect = history.location.state
@@ -31,14 +32,21 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
     setForm((prevState) => ({ ...prevState, [target.name]: target.value }))
   }
 
+  const handleChangeMultySelect = (optionsList) => {
+    setForm((prevState) => ({
+      ...prevState,
+      [optionsList.name]: optionsList.value // Данные от multySelectField приходят в optionsList.value
+    }))
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const isValid = validate()
     if (!isValid) return
 
     // onSubmit?.(form)
-    console.log('form', form)
-    console.log('e', e)
+    // console.log('form handleSubmit', form)
+    // console.log('e', e)
 
     switch (e.target.dataset.type) {
       case 'registration':
@@ -49,7 +57,18 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
         break
       case 'add-room':
         try {
-          const data = await roomsService.create(form)
+          // преобразовать данные из multySelectField
+          console.log('handleSubmit', form.options)
+
+          const formData = {
+            ...form,
+            options: form.options.map((option) => ({
+              name: option.label,
+              icon: option.icon
+            }))
+          }
+          console.log('handleSubmit formData', formData)
+          const data = await roomsService.create(formData)
           console.log('data', data)
         } catch (error) {
           console.log(error)
@@ -61,7 +80,14 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
     }
   }
 
-  return { handleChange, handleSubmit, form, isValid, errors }
+  return {
+    handleChange,
+    handleChangeMultySelect,
+    handleSubmit,
+    form,
+    isValid,
+    errors
+  }
 }
 
 export default useForm

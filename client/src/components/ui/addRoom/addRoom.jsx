@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import classes from './addRoom.css'
 import useForm from '../../../hooks/useForm'
 import { TextField, MultiSelectField } from '../../common/form'
 import { Button } from '../../common/button'
-import optionsService from '../../../services/options.service'
+import { useSelector } from 'react-redux'
+import { getOptionsList } from '../../../store/options'
 
 const validatorConfig = {
   title: {
@@ -40,6 +41,11 @@ const validatorConfig = {
     isRequired: {
       message: 'Поле обязательно для заполнения'
     }
+  },
+  options: {
+    isRequired: {
+      message: 'Поле обязательно для заполнения'
+    }
   }
 }
 const formConfig = {
@@ -49,19 +55,31 @@ const formConfig = {
   roomNumber: '',
   area: '',
   img: '',
-  price: ''
+  price: '',
+  options: []
 }
 
 const AddRoom = () => {
-  const { form, handleSubmit, handleChange, errors, isValid } = useForm(
-    formConfig,
-    validatorConfig
-  )
+  const {
+    form,
+    handleSubmit,
+    handleChangeMultySelect,
+    handleChange,
+    errors,
+    isValid
+  } = useForm(formConfig, validatorConfig)
 
-  useEffect(async () => {
-    const date = await optionsService.get()
-    console.log(' AddRoom optionsService.get()', date)
-  }, [])
+  const options = useSelector(getOptionsList())
+  console.log('options', options)
+
+  // преобразуем для MultiSelectField
+  const optionsList = options.map((option) => ({
+    label: option.name,
+    value: option._id,
+    icon: option.icon
+  }))
+
+  console.log('optionsList', optionsList)
 
   return (
     <div className={classes.wrapper}>
@@ -119,18 +137,15 @@ const AddRoom = () => {
           onChange={handleChange}
           error={errors.price}
         />
-
-        <MultiSelectField
-          options={[
-            { value: 'chocolate', label: 'Chocolate' },
-            { value: 'strawberry', label: 'Strawberry' },
-            { value: 'vanilla', label: 'Vanilla' }
-          ]}
-          onChange={handleChange}
-          name="options"
-          label="Выберите опции"
-          defaultValue={[{ value: 'vanilla', label: 'Vanilla' }]}
-        />
+        {optionsList && (
+          <MultiSelectField
+            options={optionsList}
+            onChange={handleChangeMultySelect}
+            name="options"
+            label="Выберите опции"
+            defaultValue={form.options}
+          />
+        )}
 
         <div className={classes.button}>
           <Button typeButton={'primary'} type="submit" disabled={!isValid}>

@@ -1,18 +1,18 @@
 import React from 'react'
 import { useParams } from 'react-router'
-// import api from '../../api/index'
+import api from '../../api/index'
 import Rooms from '../../components/ui/rooms/rooms'
 import CurrentRoom from '../currentRoom/currentRoom'
 import '../../fontawesome'
 import { useSelector } from 'react-redux'
 import { getRoomsList } from '../../store/rooms'
 
-// const rooms = api.rooms.fetchAll()
+const rooms = api.rooms.fetchAll()
 
 const AllRooms = () => {
   const { roomId } = useParams()
-  const rooms = useSelector(getRoomsList())
-  console.log('roomsList', rooms)
+  const roomsList = useSelector(getRoomsList())
+  console.log('roomsList', roomsList)
 
   return (
     <>

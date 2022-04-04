@@ -36,4 +36,6 @@ export const loadOptionsList = () => async (dispatch) => {
   }
 }
 
+export const getOptionsList = () => (state) => state.options.entities
+
 export default optionsReducer
