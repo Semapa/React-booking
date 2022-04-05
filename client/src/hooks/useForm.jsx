@@ -62,9 +62,11 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
 
           const formData = {
             ...form,
+            roomNumber: Number(form.roomNumber),
             options: form.options.map((option) => ({
               name: option.label,
-              icon: option.icon
+              icon: option.icon,
+              _id: option.value
             }))
           }
           console.log('handleSubmit formData', formData)

@@ -4,10 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classes from './icons.css'
 
 const Icons = (props) => {
+  console.log('Icons props', props)
+  const iconArray = props.icon.split(',')
+  console.log('iconArray', iconArray)
+
   return (
     <>
       <div className={classes.icon}>
-        <FontAwesomeIcon icon={props.icon} />
+        <FontAwesomeIcon icon={iconArray} />
       </div>
       <div className={classes.text}>{props.name}</div>
     </>

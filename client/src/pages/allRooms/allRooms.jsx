@@ -7,12 +7,13 @@ import '../../fontawesome'
 import { useSelector } from 'react-redux'
 import { getRoomsList } from '../../store/rooms'
 
-const rooms = api.rooms.fetchAll()
+const roomsApi = api.rooms.fetchAll()
 
 const AllRooms = () => {
   const { roomId } = useParams()
-  const roomsList = useSelector(getRoomsList())
-  console.log('roomsList', roomsList)
+  const rooms = useSelector(getRoomsList())
+  console.log('roomsApi', roomsApi)
+  console.log('rooms', rooms)
 
   return (
     <>
