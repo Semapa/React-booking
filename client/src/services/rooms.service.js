@@ -10,6 +10,10 @@ const roomsService = {
   create: async (payload) => {
     const { data } = await httpService.post(roomsEndpoint, payload)
     return data
+  },
+  remove: async (roomId) => {
+    const { data } = await httpService.delete(roomsEndpoint + roomId)
+    return data
   }
 }
 

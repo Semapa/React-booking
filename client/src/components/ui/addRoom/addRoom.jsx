@@ -70,7 +70,6 @@ const AddRoom = () => {
   } = useForm(formConfig, validatorConfig)
 
   const options = useSelector(getOptionsList())
-  console.log('options', options)
 
   // преобразуем для MultiSelectField
   const optionsList = options.map((option) => ({
@@ -78,8 +77,6 @@ const AddRoom = () => {
     value: option._id,
     icon: option.icon
   }))
-
-  console.log('optionsList', optionsList)
 
   return (
     <div className={classes.wrapper}>

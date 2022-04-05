@@ -7,11 +7,23 @@ import { Button } from '../../common/button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { Button } from '../../components/common/button'
 import { TextField } from '../../common/form'
+import roomsService from '../../../services/rooms.service'
 
 const RoomsManager = ({ rooms }) => {
+  console.log('RoomsManager', rooms)
   const history = useHistory()
   const handleAdd = () => {
     history.push('/dashboard/add-room')
+  }
+  const handleDelete = async (e) => {
+    const el = e.target.closest('button')
+
+    try {
+      console.log('handleDelete', el.dataset.id)
+      await roomsService.remove(el.dataset.id)
+    } catch (error) {
+      console.error('RoomsManager error', error)
+    }
   }
 
   return (
@@ -27,26 +39,33 @@ const RoomsManager = ({ rooms }) => {
             // error={errors.email}
           />
         </div>
-        {rooms.map((room) => (
-          <Card key={room.id} options={['horizontal']}>
-            <CardImage urlImg={room.img} alt="room foto" />
-            <CardContent>
-              <div>
-                <div className={classes.controls}>
-                  <Button typeButton={'close'}>
-                    <FontAwesomeIcon icon={['fa', 'times']} />
-                  </Button>
+        {rooms ? (
+          rooms.map((room) => (
+            <Card key={room._id} options={['horizontal']}>
+              <CardImage urlImg={room.img} alt="room foto" />
+              <CardContent>
+                <div>
+                  <div className={classes.controls}>
+                    <Button
+                      typeButton={'close'}
+                      onClick={handleDelete}
+                      id={room._id}>
+                      <FontAwesomeIcon icon={['fa', 'times']} />
+                    </Button>
+                  </div>
+                  <h4 className={classes.title}>{room.title}</h4>
+                  <p className={classes.text}>{room.description}</p>
                 </div>
-                <h4 className={classes.title}>{room.title}</h4>
-                <p className={classes.text}>{room.description}</p>
-              </div>
 
-              <div className={classes.controls}>
-                <Button typeButton={'edit'}>РЕДАКТИРОВАТЬ</Button>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+                <div className={classes.controls}>
+                  <Button typeButton={'edit'}>РЕДАКТИРОВАТЬ</Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))
+        ) : (
+          <h3>Нет доступных номеров</h3>
+        )}
       </div>
       <div className={classes.create}>
         <Button typeButton={'primary'} onClick={handleAdd}>

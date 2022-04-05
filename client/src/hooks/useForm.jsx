@@ -58,8 +58,6 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
       case 'add-room':
         try {
           // преобразовать данные из multySelectField
-          console.log('handleSubmit', form.options)
-
           const formData = {
             ...form,
             roomNumber: Number(form.roomNumber),
@@ -69,9 +67,8 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
               _id: option.value
             }))
           }
-          console.log('handleSubmit formData', formData)
-          const data = await roomsService.create(formData)
-          console.log('data', data)
+          await roomsService.create(formData)
+          history.push('/dashboard/manager')
         } catch (error) {
           console.log(error)
         }

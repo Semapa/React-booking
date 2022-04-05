@@ -28,7 +28,7 @@ const RoomsContent = ({ rooms }) => {
             </div>
           </CardContent>
           <div className={classes.select}>
-            <Link to={`/rooms/${room.id}`}>
+            <Link to={`/rooms/${room._id}`}>
               <span>ПОДРОБНЕЕ</span>
               <span>
                 <FontAwesomeIcon icon={faAngleRight} />

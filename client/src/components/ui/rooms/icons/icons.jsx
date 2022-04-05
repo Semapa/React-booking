@@ -4,9 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classes from './icons.css'
 
 const Icons = (props) => {
-  console.log('Icons props', props)
+  // преобразуем строку в массив
   const iconArray = props.icon.split(',')
-  console.log('iconArray', iconArray)
 
   return (
     <>
@@ -20,7 +19,7 @@ const Icons = (props) => {
 
 Icons.propTypes = {
   name: PropTypes.string,
-  icon: PropTypes.array.isRequired
+  icon: PropTypes.string.isRequired
 }
 
 export default Icons
