@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import roomsService from '../services/rooms.service'
+// import roomsService from '../services/rooms.service'
+import { createRoom } from '../store/rooms'
 import { validator } from '../utils/validator'
 import { useDispatch } from 'react-redux'
 import { signUp, login } from '../store/users'
@@ -67,7 +68,8 @@ const useForm = (initialState = {}, validatorConfig, onSubmit) => {
               _id: option.value
             }))
           }
-          await roomsService.create(formData)
+          dispatch(createRoom(formData))
+          // await roomsService.create(formData)
           history.push('/dashboard/manager')
         } catch (error) {
           console.log(error)

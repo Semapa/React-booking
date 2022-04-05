@@ -1,5 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router'
+import { removeRoom } from '../../../store/rooms'
+import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import classes from './roomsManager.css'
 import Card, { CardImage, CardContent } from '../card'
@@ -7,11 +9,13 @@ import { Button } from '../../common/button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { Button } from '../../components/common/button'
 import { TextField } from '../../common/form'
-import roomsService from '../../../services/rooms.service'
+// import roomsService from '../../../services/rooms.service'
 
 const RoomsManager = ({ rooms }) => {
   console.log('RoomsManager', rooms)
   const history = useHistory()
+  const dispatch = useDispatch()
+
   const handleAdd = () => {
     history.push('/dashboard/add-room')
   }
@@ -20,7 +24,9 @@ const RoomsManager = ({ rooms }) => {
 
     try {
       console.log('handleDelete', el.dataset.id)
-      await roomsService.remove(el.dataset.id)
+      // await roomsService.remove(el.dataset.id)
+      dispatch(removeRoom(el.dataset.id))
+      // удалить из стора
     } catch (error) {
       console.error('RoomsManager error', error)
     }
