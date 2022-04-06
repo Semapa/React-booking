@@ -27,6 +27,10 @@
   width: 300px;
 }
 
+.vertical .content {
+  height: 125px;
+}
+
 .card {
   position: relative;
   background: #fff;

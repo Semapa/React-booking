@@ -41,11 +41,11 @@ const {
 } = actions
 
 export const createRoom = (payload) => async (dispatch) => {
-  console.log('rooms createRoom payload', payload)
+  // console.log('rooms createRoom payload', payload)
   try {
     const content = await roomsService.create({ ...payload })
     dispatch(roomsRequested())
-    console.log('rooms createRoom content', content)
+    // console.log('rooms createRoom content', content)
     if (content) {
       dispatch(roomsUpdated(content))
     }
