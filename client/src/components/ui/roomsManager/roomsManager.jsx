@@ -19,14 +19,10 @@ const RoomsManager = ({ rooms }) => {
   const handleAdd = () => {
     history.push('/dashboard/add-room')
   }
-  const handleDelete = async (e) => {
-    const el = e.target.closest('button')
 
+  const handleDelete = (roomId) => {
     try {
-      console.log('handleDelete', el.dataset.id)
-      // await roomsService.remove(el.dataset.id)
-      dispatch(removeRoom(el.dataset.id))
-      // удалить из стора
+      dispatch(removeRoom(roomId))
     } catch (error) {
       console.error('RoomsManager error', error)
     }
@@ -54,7 +50,7 @@ const RoomsManager = ({ rooms }) => {
                   <div className={classes.controls}>
                     <Button
                       typeButton={'close'}
-                      onClick={handleDelete}
+                      onClick={() => handleDelete(room._id)}
                       id={room._id}>
                       <FontAwesomeIcon icon={['fa', 'times']} />
                     </Button>

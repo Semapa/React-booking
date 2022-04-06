@@ -9,6 +9,15 @@
 }
 
 .pagination li {
+  /* display: block; */
+  /* padding: 6px 14px 6px 14px;
+  margin: 5px;
+  color: #fff;
+  background-color: var(--color-yellow-main);
+  transition: all 0.3s ease-out; */
+}
+
+.pagination li a {
   padding: 6px 14px 6px 14px;
   margin: 5px;
   color: #fff;
@@ -16,7 +25,11 @@
   transition: all 0.3s ease-out;
 }
 
-.pagination li:hover {
-  background: #0073b7;
+.pagination a:hover {
+  background: var(--color-button-blue);
   cursor: pointer;
+}
+
+.pagination .active {
+  background: var(--color-button-blue);
 }
